@@ -48,7 +48,7 @@
 
 <body class="bg-body-tertiary">
     <!-- Include the header -->
-    <div th:replace="header :: headerFragment2"></div>
+    <div th:replace="fragments :: headerFragment"></div>
     <!-- End Header -->
     <main id="main" class="main">
         <!-- blog header -->
@@ -517,7 +517,7 @@
     <hr />
     <!-- Footer -->
     <footer class="text-center" style="background: chartreuse;">
-        <div th:replace="header :: footerFragment"></div>
+        <div th:replace="fragments :: footerFragment"></div>
     </footer>
     <!-- Footer -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>

@@ -14,15 +14,7 @@ body a {
     background-color: greenyellow;
 }
 
-/*--------------------------------------------------------------
-# breaking news carasoul section
---------------------------------------------------------------*/
-.navigation-box {
-    top: 0.4rem;
-    right: 0.8rem;
-    width: 4rem;
-    position: absolute;
-}
+
 
 /*card css*/
 .card-header {
@@ -66,40 +58,44 @@ body a {
         0 10px 10px rgba(0, 0, 0, .2),
         0 20px 20px rgba(0, 0, 0, .15);
 }
+
 /*writing effect css*/
- @keyframes writing {
-        0% {
-            width: 0;
-        }
-        100% {
-            width: 100%;
-        }
+@keyframes writing {
+    0% {
+        width: 0;
     }
 
-    .writing-effect {
-        display: inline-block;
-        overflow: hidden;
-        white-space: nowrap;
-        border-right: 3px solid sandybrown;
-        animation: writing 4s steps(30) forwards, blink-caret 0.75s step-end infinite;
+    100% {
+        width: 100%;
     }
+}
 
-    @keyframes blink-caret {
-        50% {
-            border-color: transparent;
-        }
+.writing-effect {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid sandybrown;
+    animation: writing 4s steps(30) forwards, blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+    50% {
+        border-color: transparent;
     }
+}
 
- .container-fluid{
+.container-fluid {
     padding-right: 0;
     padding-left: 0;
-      
-      }
-.container{
+
+}
+
+.container {
     padding-right: 0;
     padding-left: 0;
-        
-        }
+
+}
+
 /*bottom navbar for mobile devices*/
 
 .mobile-bottom-nav {
@@ -114,19 +110,30 @@ body a {
     height: 50px;
     box-shadow: 0 -2px 5px -2px #333;
     background-color: #fff;
-  }
-  .mobile-bottom-nav__item {
+}
+
+.mobile-bottom-nav__item {
     flex-grow: 1;
     text-align: center;
     font-size: 12px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-  }
-  .mobile-bottom-nav__item--active {
+}
+
+.mobile-bottom-nav__item--active {
     color: red;
-  }
-  .mobile-bottom-nav__item-content {
+}
+
+.mobile-bottom-nav__item-content {
     display: flex;
     flex-direction: column;
-  }
+}
+
+/* Extra small devices (phones, portrait) */
+@media (max-width: 576px) {
+    tbody{
+        font-size: x-small;
+        text-align: left;
+    }
+}

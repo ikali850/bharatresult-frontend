@@ -24,11 +24,11 @@
 
 <body class="bg-body-tertiary">
     <!-- Include the header -->
-    <div th:replace="header :: headerFragment2"></div>
+    <div th:replace="fragments :: headerFragment"></div>
     <!-- End Header -->
     <!-- hero section starts here -->
     <div class="container-fluid my-1 rounded-2" style="background-color: coral;">
-        <div class="p-3 text-center justify-content-center">
+        <div class="p-4 text-center justify-content-center">
             <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a class="text-dark " href="/"><i class="fa-solid fa-house"></i> Home</a></li>
@@ -44,103 +44,6 @@
     </div>
     <!-- hero section ends here -->
     <main class="main">
-        <!-- Breaking news section -->
-        <div class="card-body">
-            <div class="row mb-2">
-                <div class="col-12 py-2 bg-dark">
-                    <div class="row">
-                        <!-- Breaking box -->
-                        <div class="col-md-3 col-lg-2 pr-md-0">
-                            <div class="p-2 bg-warning text-white text-center breaking-caret">
-                                <span class="fw-bold">Breaking News</span>
-                            </div>
-                        </div>
-                        <!-- End breaking box -->
-                        <!-- Breaking content -->
-                        <div class="col-md-9 col-lg-10 ps-md-4 py-2">
-                            <div class="breaking-box">
-                                <div id="carouselBreaking" class="carousel slide" data-bs-ride="carousel">
-                                    <!-- Breaking news -->
-                                    <div class="carousel-inner">
-                                        <!-- Post -->
-                                        <div class="carousel-item">
-                                            <a href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
-                                                <span
-                                                    class="position-relative mx-2 badge bg-primary rounded-0">Technology</span>
-                                            </a>
-                                            <a class="text-white"
-                                                href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">Google
-                                                Employees Protest Secret Work on Censored Search
-                                                Engine
-                                                for China</a>
-                                        </div>
-                                        <!-- Post -->
-                                        <div class="carousel-item">
-                                            <a href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
-                                                <span
-                                                    class="position-relative mx-2 badge bg-primary rounded-0">Automotive</span>
-                                            </a>
-                                            <a class="text-white"
-                                                href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">Investors
-                                                Betting Against Tesla Made $1 Billion on Friday</a>
-                                        </div>
-                                        <!-- Post -->
-                                        <div class="carousel-item">
-                                            <a href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
-                                                <span
-                                                    class="position-relative mx-2 badge bg-primary rounded-0">Football</span>
-                                            </a>
-                                            <a class="text-white"
-                                                href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">World
-                                                Cup 2050 Will Release in Dubai</a>
-                                        </div>
-                                        <!-- Post -->
-                                        <div class="carousel-item">
-                                            <a href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
-                                                <span
-                                                    class="position-relative mx-2 badge bg-primary rounded-0">Beauty</span>
-                                            </a>
-                                            <a class="text-white"
-                                                href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">Lemon
-                                                Makes Your Skin Fresh and Glowing</a>
-                                        </div>
-                                        <!-- Post -->
-                                        <div class="carousel-item active">
-                                            <a href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
-                                                <span
-                                                    class="position-relative mx-2 badge bg-primary rounded-0">Sport</span>
-                                            </a>
-                                            <a class="text-white"
-                                                href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">5
-                                                Takeaways From Elon Musk’s Interview With The Times
-                                                About Tesla</a>
-                                        </div>
-                                    </div>
-                                    <!-- End breaking news -->
-                                    <!-- Navigation slider -->
-                                    <div class="navigation-box p-2 d-none d-sm-block">
-                                        <!-- Nav left -->
-                                        <button class="carousel-control-prev" type="button"
-                                            data-bs-target="#carouselBreaking" data-bs-slide="prev">
-                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                            <span class="visually-hidden">Previous</span>
-                                        </button>
-                                        <!-- Nav right -->
-                                        <button class="carousel-control-next" type="button"
-                                            data-bs-target="#carouselBreaking" data-bs-slide="next">
-                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                            <span class="visually-hidden">Next</span>
-                                        </button>
-                                    </div>
-                                    <!-- End navigation slider -->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End breaking content -->
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="mx-md-3 mx-1">
             <div class="row g-2 g-xxl-5 mx-md-3">
                 <div class="col-lg-8">
@@ -189,7 +92,7 @@
                         <div class="card h-50 mb-2">
                             <div class="card-header bg-success">
                                 <div class="text-white fw-500 text-center">
-                                    <i class="fa-solid fa-hand-pointer"></i> <b>Trending</b>
+                                    <i class="fa-solid fa-arrow-trend-up"></i> <b>Trending</b>
                                 </div>
                             </div>
                             <div >
@@ -267,7 +170,7 @@
     <hr />
     <!-- Footer -->
     <footer class="text-center" style="background: chartreuse;">
-        <div th:replace="header :: footerFragment"></div>
+        <div th:replace="fragments :: footerFragment"></div>
     </footer>
     <!-- Footer -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>

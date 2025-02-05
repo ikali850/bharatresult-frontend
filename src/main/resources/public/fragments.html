@@ -1,0 +1,233 @@
+<!-- src/main/resources/templates/fragments/header.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+</head>
+
+<body class="bg-body-tertiary">
+    
+    <!-- header fragment -->
+    <div th:fragment="headerFragment">
+        <!-- Header starts -->
+        <div class="container" style="width: fit-content;">
+            <h1 class="display-3 fw-bold mb-1 text-dark text-center">
+                <span class="writing-effect text-success">BharatResult.com</span>
+            </h1>
+        </div>
+        <div class="nav-scroller bg-body shadow-sm">
+            <nav class="nav align-items-center" aria-label="Secondary navigation">
+                <a class="btn-outline-info nav-link" aria-current="page" href="/">Home</a>
+                
+                <a class="btn-outline-info nav-link" href="/job">Jobs</a>
+                <a class="btn-outline-info nav-link" href="/exam">Exam</a>
+                <a class="btn-outline-info nav-link" href="/result">Result</a>
+                <a class="btn-outline-info nav-link" href="/syllabus">Syllabus</a>
+                <a class="btn-outline-info nav-link" href="/admission">Admission</a>
+                <a class="btn-outline-info nav-link" href="/service">Service</a>
+                <a class="btn-outline-info nav-link" href="/tools">Tools</a>
+                <a class="btn-outline-info nav-link" href="/contact-us">Contact Us</a>
+                <a class="btn-outline-info nav-link" href="/about-us">About Us</a>
+                <!-- New links added here -->
+            </nav>
+        </div>
+        <!-- Direct section for mobile devices -->
+        <nav class="mobile-bottom-nav d-sm-none fixed-bottom rounded-3">
+            <div class="mobile-bottom-nav__item mobile-bottom-nav__item--active">
+                <a href="#" class="mobile-bottom-nav__item-content">
+                    <i class="material-icons">home</i>
+                    Home
+                </a>
+            </div>
+            <div class="mobile-bottom-nav__item">
+                <a href="#jobs" class="mobile-bottom-nav__item-content">
+                    <i class="material-icons">work</i>
+                    Jobs
+                </a>
+            </div>
+            <div class="mobile-bottom-nav__item">
+                <a href="/results" class="mobile-bottom-nav__item-content">
+                    <i class="material-icons">book</i>
+                    Result
+                </a>
+            </div>
+            <div class="mobile-bottom-nav__item">
+                <a href="#service" class="mobile-bottom-nav__item-content">
+                    <i class="material-icons">diversity_3</i>
+                    Service
+                </a>
+            </div>
+        </nav>
+    </div>
+    <!-- footer fragment -->
+    <div th:fragment="footerFragment">
+        <div class="container p-4">
+            <!-- Section: Social media -->
+            <div class="container p-4">
+                <!-- Section: Social media -->
+                <section class="mb-4">
+                    <div class="d-flex justify-content-center">
+                        <!-- Facebook -->
+                        <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button">
+                            <img class="rounded" src="/assets/img/facebook-3-logo-svgrepo-com.png" height="30px"
+                                alt="Facebook" />
+                        </a>
+                        <!-- Google -->
+                        <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button">
+                            <img class="rounded" src="/assets/img/google-color-svgrepo-com.png" height="30px"
+                                alt="Google" />
+                        </a>
+                        <!-- Instagram -->
+                        <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button">
+                            <img class="rounded" src="/assets/img/instagram-2-1-logo-svgrepo-com.png" height="30px"
+                                alt="Instagram" />
+                        </a>
+                        <!-- Linkedin -->
+                        <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button">
+                            <img class="rounded" src="/assets/img/linkedin-icon-2-logo-svgrepo-com.png" height="30px"
+                                alt="LinkedIn" />
+                        </a>
+                        <!-- Github -->
+                        <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button">
+                            <img class="rounded" src="/assets/img/github-color-svgrepo-com.png" height="30px"
+                                alt="GitHub" />
+                        </a>
+                    </div>
+                </section>
+                <!-- Section: Social media -->
+                <!-- Section: Form -->
+                <section>
+                    <form action>
+                        <!--Grid row-->
+                        <div class="row d-flex justify-content-center">
+                            <!--Grid column-->
+                            <div class="col-auto">
+                                <p class="pt-2">
+                                    <strong>Sign up for our newsletter</strong>
+                                </p>
+                            </div>
+                            <!--Grid column-->
+                            <div class="col-md-5 col-12">
+                                <!-- Email input -->
+                                <div data-mdb-input-init class="form-outline mb-4">
+                                    <input type="email" id="form5Example24" class="form-control"
+                                        placeholder="Enter Email" required />
+                                </div>
+                            </div>
+                            <!--Grid column-->
+                            <div class="col-auto">
+                                <!-- Submit button -->
+                                <button data-mdb-ripple-init type="submit" class="btn btn-primary mb-4">
+                                    Subscribe
+                                </button>
+                            </div>
+                            <!--Grid column-->
+                        </div>
+                        <!--Grid row-->
+                    </form>
+                </section>
+                <!-- Section: Form -->
+            </div>
+        </div>
+    </div>
+    <!-- service box fragment -->
+     <div th:fragment="serviceFragment">
+        <div id="service" class="mx-md-3 mx-1">
+            <div class="card mt-1">
+                <div class="card-header text-white bg-success">
+                    <b>Services</b>
+                </div>
+                <div class="card-body">
+                    <div class="row row-cols-1 row-cols-sm-4 row-cols-md-4 g-2 py-2">
+                        <!-- Image to PDF -->
+                        <div class="col d-flex align-items-start">
+                            <a href="#" class="d-flex align-items-start text-decoration-none text-muted p-1">
+                                <i class="fas fa-file-pdf me-3" style="font-size: 1.75em;"></i>
+                                <div>
+                                    <h4 class="fw-bold mb-0">Image to PDF Converter</h4>
+                                    <p>Convert images (JPG, PNG) into a single PDF document for easy sharing.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- File Compression -->
+                        <div class="col d-flex align-items-start">
+                            <a href="#" class="d-flex align-items-start text-decoration-none text-muted p-1">
+                                <i class="fas fa-compress me-3" style="font-size: 1.75em;"></i>
+                                <div>
+                                    <h4 class="fw-bold mb-0">File Compression</h4>
+                                    <p>Reduce the file size of PDFs, images, and documents without losing quality.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Password Generator -->
+                        <div class="col d-flex align-items-start">
+                            <a href="#" class="d-flex align-items-start text-decoration-none text-muted p-1">
+                                <i class="fas fa-key me-3" style="font-size: 1.75em;"></i>
+                                <div>
+                                    <h4 class="fw-bold mb-0">Password Generator</h4>
+                                    <p>Generate strong, secure passwords for your accounts and sensitive data.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- QR Code Generator -->
+                        <div class="col d-flex align-items-start">
+                            <a href="#" class="d-flex align-items-start text-decoration-none text-muted p-1">
+                                <i class="fas fa-qrcode me-3" style="font-size: 1.75em;"></i>
+                                <div>
+                                    <h4 class="fw-bold mb-0">QR Code Generator</h4>
+                                    <p>Create QR codes for URLs, texts, or contact info for easy sharing.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Text to Speech -->
+                        <div class="col d-flex align-items-start">
+                            <a href="#" class="d-flex align-items-start text-decoration-none text-muted p-1">
+                                <i class="fas fa-volume-up me-3" style="font-size: 1.75em;"></i>
+                                <div>
+                                    <h4 class="fw-bold mb-0">Text to Speech</h4>
+                                    <p>Convert written text into speech to make content more accessible.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Speech to Text -->
+                        <div class="col d-flex align-items-start">
+                            <a href="#" class="d-flex align-items-start text-decoration-none text-muted p-1">
+                                <i class="fas fa-microphone-alt me-3" style="font-size: 1.75em;"></i>
+                                <div>
+                                    <h4 class="fw-bold mb-0">Speech to Text</h4>
+                                    <p>Convert your voice into written text, perfect for transcriptions and notes.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Document Editing (Markdown Editor) -->
+                        <div class="col d-flex align-items-start">
+                            <a href="#" class="d-flex align-items-start text-decoration-none text-muted p-1">
+                                <i class="fas fa-pencil-alt me-3" style="font-size: 1.75em;"></i>
+                                <div>
+                                    <h4 class="fw-bold mb-0">Document Editor</h4>
+                                    <p>Edit and format your documents using Markdown or a rich text editor.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Currency Converter -->
+                        <div class="col d-flex align-items-start">
+                            <a href="#" class="d-flex align-items-start text-decoration-none text-muted p-1">
+                                <i class="fas fa-money-bill-wave me-3" style="font-size: 1.75em;"></i>
+                                <div>
+                                    <h4 class="fw-bold mb-0">Currency Converter</h4>
+                                    <p>Convert currencies based on real-time exchange rates for easy transactions.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+     </div>
+</body>
+
+</html>

@@ -3,6 +3,7 @@ package com.bharatresult.frontend.bharatresult.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -38,6 +39,7 @@ public class HomeController {
         return mv;
     }
     @GetMapping("/post/{url}")
+    @Cacheable(value = "post",key = "#url")
     public ModelAndView getPost(@PathVariable("url") String url) {
         Post post = this.postService.getPost(url);
         ModelAndView mv=new ModelAndView("blog");
@@ -47,6 +49,7 @@ public class HomeController {
     
 
     @GetMapping("/result")
+    @Cacheable(value = "postList",key = "'result'")
     public ModelAndView resultPage() {
         ModelAndView mv = new ModelAndView("list");
         Page<Post> postPagesList = this.postService.getPostsByCategory("result", 25, 0);
@@ -59,6 +62,7 @@ public class HomeController {
         return mv;
     }
     @GetMapping("/result/page/{pageNo}")
+    @Cacheable(value = "postList",key = "#pageNo")
     public ModelAndView resultPages(@PathVariable("pageNo")int pageNo) {
         ModelAndView mv = new ModelAndView("list");
         Page<Post> postPagesList = this.postService.getPostsByCategory("result", 25, pageNo-1);
