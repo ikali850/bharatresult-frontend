@@ -60,9 +60,36 @@
                 </div>
             </div>
         </div>
-
+        <div class="bg-info py-3 mb-1 fw-bold text-white">
+            <ul class=" px-1 mx-1 list-unstyled d-flex flex-wrap justify-content-start align-items-center mb-0">
+                <!-- Author -->
+                <li class="d-flex align-items-center me-4 mb-3 mb-md-0">
+                    <i class="fas fa-user me-2 fs-5 fs-md-4"></i> <!-- Author Icon -->
+                    <span class="fs-6 fs-md-5">Arvind kumar</span> <!-- Author Name -->
+                </li>
+        
+                <!-- Date -->
+                <li class="d-flex align-items-center me-4 mb-3 mb-md-0">
+                    <i class="fas fa-calendar-day me-2 fs-5 fs-md-4"></i> <!-- Date Icon -->
+                    <span class="fs-6 fs-md-5">2025-02-06</span> <!-- Date -->
+                </li>
+        
+                <!-- Views -->
+                <li class="d-flex align-items-center me-4 mb-3 mb-md-0">
+                    <i class="fas fa-eye me-2 fs-5 fs-md-4"></i> <!-- Views Icon -->
+                    <span class="fs-6 fs-md-5">1000 Views</span> <!-- Views Count -->
+                </li>
+        
+                <!-- Shares -->
+                <li class="d-flex align-items-center mb-3 mb-md-0">
+                    <i class="fas fa-share-alt me-2 fs-5 fs-md-4"></i> <!-- Shares Icon -->
+                    <span class="fs-6 fs-md-5">120 Shares</span> <!-- Shares Count -->
+                </li>
+            </ul>
+        </div>
+        
+        
         <!-- blog header ends -->
-        <!-- Breaking news section -->
         <div class="mx-md-5 mx-1">
             <div class="row g-2 g-xxl-5">
                 <!-- th:utext="${post.content}" add this to below div for post content -->
@@ -373,148 +400,14 @@
                         </div>
                     </div>
                 </div>
-                <div id="app-tools" class="card mt-1 ">
-                    <div class="card-header text-white bg-success">
-                        <b>Helpful
-                            Tools</b>
-                    </div>
-                    <div class="card-body">
-                        <ul>
-                            <li>
-                                To
-                                start,
-                                scrollspy
-                                requires
-                                two
-                                things:
-                                a
-                                navigation,
-                                list
-                                group,
-                                or
-                                a
-                                simple
-                                set
-                                of
-                                links,
-                                plus
-                                a
-                                scrollable
-                                container.
-                                The
-                                scrollable
-                                container
-                                can
-                                be
-                                the
-
-                                <body>
-                                    or
-                                    a
-                                    custom
-                                    element
-                                    with
-                                    a
-                                    set
-                                    height
-                                    and
-                                    overflow-y:
-                                    scroll.
-                            </li>
-                        </ul>
-                        <ul>
-                            <li>
-                                To
-                                start,
-                                scrollspy
-                                requires
-                                two
-                                things:
-                                a
-                                navigation,
-                                list
-                                group,
-                                or
-                                a
-                                simple
-                                set
-                                of
-                                links,
-                                plus
-                                a
-                                scrollable
-                                container.
-                                The
-                                scrollable
-                                container
-                                can
-                                be
-                                the
-
-                                <body>
-                                    or
-                                    a
-                                    custom
-                                    element
-                                    with
-                                    a
-                                    set
-                                    height
-                                    and
-                                    overflow-y:
-                                    scroll.
-                            </li>
-                        </ul>
-                        <ul>
-                            <li>
-                                To
-                                start,
-                                scrollspy
-                                requires
-                                two
-                                things:
-                                a
-                                navigation,
-                                list
-                                group,
-                                or
-                                a
-                                simple
-                                set
-                                of
-                                links,
-                                plus
-                                a
-                                scrollable
-                                container.
-                                The
-                                scrollable
-                                container
-                                can
-                                be
-                                the
-
-                                <body>
-                                    or
-                                    a
-                                    custom
-                                    element
-                                    with
-                                    a
-                                    set
-                                    height
-                                    and
-                                    overflow-y:
-                                    scroll.
-                            </li>
-                        </ul>
-                    </div>
-                </div>
             </div>
         </div>
+        <div th:replace="fragments::serviceFragment">
+            <!-- tools from fragment -->
+        </div>
+        <br>
     </main>
     <!-- End #main -->
-    <hr />
     <!-- Footer -->
     <footer class="text-center" style="background: chartreuse;">
         <div th:replace="fragments :: footerFragment"></div>
