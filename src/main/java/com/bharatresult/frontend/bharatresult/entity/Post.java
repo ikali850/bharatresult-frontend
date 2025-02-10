@@ -1,6 +1,6 @@
 package com.bharatresult.frontend.bharatresult.entity;
 
-
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -19,13 +19,16 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
 @Table(name = "post")
 @Data
+@ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class Post {
+public class Post implements Serializable {
+    private static final long serialVersionUID = 7156526077883281624L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -54,7 +57,7 @@ public class Post {
     private boolean isPublish = false;
     private long likes, views, shares;
     @Column(name = "created_date", updatable = false)
-    private LocalDateTime createdDate;
+    private String createdDate;
 
     @Column(name = "updated_date")
     private LocalDateTime updatedDate;

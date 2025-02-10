@@ -1,8 +1,7 @@
 package com.bharatresult.frontend.bharatresult.entity;
 
-import java.time.LocalDateTime;
+import java.io.Serializable;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,22 +11,16 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
 @Entity
-@Table(name = "contact_us_messages")
+@Table(name = "trending_post")
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Messages {
+public class TrendingPost implements Serializable {
+    private static final long serialVersionUID = 715652607788328164L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String fName;
+    private String name, url;
 
-    private String lName;
-
-    private String email;
-
-    private String message;
-
-    private LocalDateTime createdAt = LocalDateTime.now();
 }

@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Home page</title>
+    <title>BharatResult.com-Home</title>
     <meta content name="description" />
     <meta content name="keywords" />
     <!-- Favicons -->
@@ -25,14 +24,15 @@
 
 <body class="bg-body-tertiary">
     <!-- Include the header -->
-    <div th:replace="fragments :: headerFragment"></div>
+    <div th:replace="~{fragments :: headerFragment2}"></div>
     <!-- End Header -->
     <!-- hero section starts here -->
     <section class="bsb-hero-1 px-3 bsb-overlay bsb-hover-pull">
         <div class="row justify-content-md-center mt-1">
             <div class="col-12 col-md-11 col-lg-9 col-xl-7 col-xxl-6 text-center text-white">
                 <h3 class="fw-bold mb-3 text-dark">
-                    <span class="text-success" style="width: fit-content;display: inline;">Welcome To BharatResult</span>
+                    <span class="text-success" style="width: fit-content;display: inline;">Welcome To
+                        BharatResult</span>
                 </h3>
                 <p class="mb-2 text-dark">
                     Your ultimate destination for comprehensive updates on
@@ -48,75 +48,63 @@
     <h4 class="text-center text-white p-2 mt-2 bg-success"><i class="fa-solid fa-arrow-trend-up"></i><b> Trending</b>
     </h4>
 
-    <div class="mx-">
+    <div>
         <div class="table-responsive">
             <table class="table table-bordered">
                 <tbody>
-                    <!-- Row 1 -->
                     <tr>
                         <td class="text-center">
                             <span class="badge bg-primary">1</span>
                             <br>
-                            <a href="https://www.smashingmagazine.com/2021/09/introducing-new-design-process/"
-                                class="text-decoration-none">Smashing Magazine: Introducing a New Design Process</a>
+                            <a th:href="${trendingPost[0].url}" th:text="${trendingPost[0].name}" class="text-decoration-none fw-bold"></a>
                         </td>
                         <td class="text-center">
                             <span class="badge bg-secondary">2</span>
                             <br>
-                            <a href="https://www.freecodecamp.org/news/the-best-javascript-frameworks-for-2023/"
-                                class="text-decoration-none">FreeCodeCamp: Best JavaScript Frameworks for 2023</a>
+                            <a th:href="${trendingPost[1].url}" th:text="${trendingPost[1].name}" class="text-decoration-none fw-bold"></a>
                         </td>
                         <td class="text-center">
                             <span class="badge bg-success">3</span>
                             <br>
-                            <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
-                                class="text-decoration-none">CSS-Tricks: A Complete Guide to Flexbox</a>
+                            <a th:href="${trendingPost[2].url}" th:text="${trendingPost[2].name}" class="text-decoration-none fw-bold"></a>
                         </td>
                     </tr>
-                    <!-- Row 2 -->
                     <tr>
                         <td class="text-center">
                             <span class="badge bg-danger">4</span>
                             <br>
-                            <a href="https://www.smashingmagazine.com/2021/11/understanding-javascript-frameworks/"
-                                class="text-decoration-none">Smashing Magazine: Understanding JavaScript Frameworks</a>
+                            <a th:href="${trendingPost[3].url}" th:text="${trendingPost[3].name}" class="text-decoration-none fw-bold"></a>
                         </td>
                         <td class="text-center">
                             <span class="badge bg-warning">5</span>
                             <br>
-                            <a href="https://www.hongkiat.com/blog/10-best-javascript-frameworks-for-front-end-development/"
-                                class="text-decoration-none">Hongkiat: Best JavaScript Frameworks for Front-End
-                                Development</a>
+                            <a th:href="${trendingPost[4].url}" th:text="${trendingPost[4].name}" class="text-decoration-none fw-bold"></a>
                         </td>
                         <td class="text-center">
                             <span class="badge bg-info">6</span>
                             <br>
-                            <a href="https://reactjs.org/docs/getting-started.html"
-                                class="text-decoration-none">ReactJS: Getting Started with React</a>
+                            <a th:href="${trendingPost[5].url}" th:text="${trendingPost[5].name}" class="text-decoration-none fw-bold"></a>
                         </td>
                     </tr>
-                    <!-- Row 3 -->
                     <tr>
                         <td class="text-center">
-                            <span class="badge bg-light">7</span>
+                            <span class="badge bg-success">7</span>
                             <br>
-                            <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox"
-                                class="text-decoration-none">MDN Web Docs: Flexbox Layout</a>
+                            <a th:href="${trendingPost[6].url}" th:text="${trendingPost[6].name}" class="text-decoration-none fw-bold"></a>
                         </td>
                         <td class="text-center">
                             <span class="badge bg-dark">8</span>
                             <br>
-                            <a href="https://www.digitalocean.com/community/tutorials/understanding-react-hooks"
-                                class="text-decoration-none">DigitalOcean: Understanding React Hooks</a>
+                            <a th:href="${trendingPost[7].url}" th:text="${trendingPost[7].name}" class="text-decoration-none fw-bold"></a>
                         </td>
                         <td class="text-center">
                             <span class="badge bg-primary">9</span>
                             <br>
-                            <a href="https://www.freecodecamp.org/news/a-complete-guide-to-flexbox-css-869b4e1b40f2/"
-                                class="text-decoration-none">FreeCodeCamp: Complete Guide to Flexbox</a>
+                            <a th:href="${trendingPost[8].url}" th:text="${trendingPost[8].name}" class="text-decoration-none fw-bold"></a>
                         </td>
                     </tr>
                 </tbody>
+                
             </table>
         </div>
     </div>
@@ -134,49 +122,24 @@
                             </div>
                         </div>
                         <div class="list-group list-group-flush small mb-0 border-bottom">
-                            <a class="list-group-item list-group-item-action" href="/blog">
-                                Introducing Start Bootstrap Forms <b class="text-danger">Blog</b>
-                                <div class="text-xs text-muted">July 9, 2021</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="blog.html">
-                                Introducing Start Bootstrap Forms <b class="text-danger">Blog</b>
-                                <div class="text-xs text-muted">July 9, 2021</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Bootstrap 5 Templates and Themes Update for Start Bootstrap
-                                <div class="text-xs text-muted">May 21, 2021</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Is Bootstrap Relevant in 2021?
-                                <div class="text-xs text-muted">May 21, 2021</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Introducing Angular Bootstrap Themes and Templates
-                                <div class="text-xs text-muted">April 9, 2020</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Introducing Start Bootstrap Forms
-                                <div class="text-xs text-muted">July 9, 2021</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Free Bootstrap Themes - 2021 Update
-                                <div class="text-xs text-muted">June 27, 2021</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Bootstrap 5 Templates and Themes Update for Start Bootstrap
-                                <div class="text-xs text-muted">May 21, 2021</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Is Bootstrap Relevant in 2021?
-                                <div class="text-xs text-muted">May 21, 2021</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Introducing Angular Bootstrap Themes and Templates
-                                <div class="text-xs text-muted">April 9, 2020</div>
-                            </a>
+                            <div th:each="item : ${jobList}">
+                                <a class="list-group-item list-group-item-action"
+                                    th:href="@{ '/post/' + ${item.postUrl}}">
+                                    <span th:text="${item.shortTitle}"></span>
+                                    <div class="text-xs text-muted" th:text="${item.updatedDate}"></div>
+                                </a>
+
+                            </div>
                         </div>
-                        <div class="card-footer bg-light align-items-center text-center">
-                            <a href="list.html">
+                        <div th:if="${jobList.size() < 1}">
+                            <div class="text-center mt-5">
+                                <h1><i class="fa-solid fa-hourglass"></i></h1>
+                                <h1 class="fw-bold">No Data</h1>
+                            </div>
+                        </div>
+                        <div th:if="${jobList.size() >= 14}"
+                            class="card-footer bg-light align-items-center text-center">
+                            <a href="/job">
                                 <b class="btn btn-outline-info px-5">View More</b>
                             </a>
                         </div>
@@ -186,53 +149,28 @@
                     <div class="card h-100">
                         <div class="card-header bg-success">
                             <div class="text-white fw-500 text-center">
-                                <b>Recent Exam</b>
+                                <b>Admit Card</b>
                             </div>
                         </div>
                         <div class="list-group list-group-flush small mb-0 border-bottom">
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Introducing Start Bootstrap Forms
-                                <div class="text-xs text-muted">July 9, 2021</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Free Bootstrap Themes - 2021 Update
-                                <div class="text-xs text-muted">June 27, 2021</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Bootstrap 5 Templates and Themes Update for Start Bootstrap
-                                <div class="text-xs text-muted">May 21, 2021</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Is Bootstrap Relevant in 2021?
-                                <div class="text-xs text-muted">May 21, 2021</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Introducing Angular Bootstrap Themes and Templates
-                                <div class="text-xs text-muted">April 9, 2020</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Introducing Start Bootstrap Forms
-                                <div class="text-xs text-muted">July 9, 2021</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Free Bootstrap Themes - 2021 Update
-                                <div class="text-xs text-muted">June 27, 2021</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Bootstrap 5 Templates and Themes Update for Start Bootstrap
-                                <div class="text-xs text-muted">May 21, 2021</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Is Bootstrap Relevant in 2021?
-                                <div class="text-xs text-muted">May 21, 2021</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Introducing Angular Bootstrap Themes and Templates
-                                <div class="text-xs text-muted">April 9, 2020</div>
-                            </a>
+                            <div th:each="item : ${admitCardList}">
+                                <a class="list-group-item list-group-item-action"
+                                    th:href="@{ '/post/' + ${item.postUrl}}">
+                                    <span th:text="${item.shortTitle}"></span>
+                                    <div class="text-xs text-muted" th:text="${item.updatedDate}"></div>
+                                </a>
+
+                            </div>
                         </div>
-                        <div class="card-footer bg-light align-items-center text-center">
-                            <a href="list.html">
+                        <div th:if="${admitCardList.size() < 1}">
+                            <div class="text-center mt-5">
+                                <h1><i class="fa-solid fa-hourglass"></i></h1>
+                                <h1 class="fw-bold">No Data</h1>
+                            </div>
+                        </div>
+                        <div th:if="${admitCardList.size() >= 14}"
+                            class="card-footer bg-light align-items-center text-center">
+                            <a href="/admit-card">
                                 <b class="btn btn-outline-info px-5">View More</b>
                             </a>
                         </div>
@@ -246,49 +184,24 @@
                             </div>
                         </div>
                         <div class="list-group list-group-flush small mb-0 border-bottom">
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Introducing Start Bootstrap Forms
-                                <div class="text-xs text-muted">July 9, 2021</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Free Bootstrap Themes - 2021 Update
-                                <div class="text-xs text-muted">June 27, 2021</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Bootstrap 5 Templates and Themes Update for Start Bootstrap
-                                <div class="text-xs text-muted">May 21, 2021</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Is Bootstrap Relevant in 2021?
-                                <div class="text-xs text-muted">May 21, 2021</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Introducing Angular Bootstrap Themes and Templates
-                                <div class="text-xs text-muted">April 9, 2020</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Introducing Start Bootstrap Forms
-                                <div class="text-xs text-muted">July 9, 2021</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Free Bootstrap Themes - 2021 Update
-                                <div class="text-xs text-muted">June 27, 2021</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Bootstrap 5 Templates and Themes Update for Start Bootstrap
-                                <div class="text-xs text-muted">May 21, 2021</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Is Bootstrap Relevant in 2021?
-                                <div class="text-xs text-muted">May 21, 2021</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Introducing Angular Bootstrap Themes and Templates
-                                <div class="text-xs text-muted">April 9, 2020</div>
-                            </a>
+                            <div th:each="item : ${resultList}">
+                                <a class="list-group-item list-group-item-action"
+                                    th:href="@{ '/post/' + ${item.postUrl}}">
+                                    <span th:text="${item.shortTitle}"></span>
+                                    <div class="text-xs text-muted" th:text="${item.updatedDate}"></div>
+                                </a>
+
+                            </div>
                         </div>
-                        <div class="card-footer bg-light align-items-center text-center">
-                            <a href="list.html">
+                        <div th:if="${resultList.size() < 1}">
+                            <div class="text-center mt-5">
+                                <h1><i class="fa-solid fa-hourglass"></i></h1>
+                                <h1 class="fw-bold">No Data</h1>
+                            </div>
+                        </div>
+                        <div th:if="${resultList.size() >= 14}"
+                            class="card-footer bg-light align-items-center text-center">
+                            <a href="/result">
                                 <b class="btn btn-outline-info px-5">View More</b>
                             </a>
                         </div>
@@ -302,133 +215,94 @@
     <section id="news-addmission-section">
         <div class="mx-md-3 mx-1">
             <div class="row g-2 g-xxl-5">
-                <div class="col-lg-4" id="addmission">
-                    <div class="card h-60">
+                <div class="col-lg-4" id="admission">
+                    <div class="card h-100">
+                        <div class="card-header bg-success">
+                            <div class="text-white fw-500 text-center">
+                                <b>Admission Form</b>
+                            </div>
+                        </div>
+                        <div class="list-group list-group-flush small mb-0 border-bottom">
+                            <div th:each="item : ${admissionList}">
+                                <a class="list-group-item list-group-item-action"
+                                    th:href="@{ '/post/' + ${item.postUrl}}">
+                                    <span th:text="${item.shortTitle}"></span>
+                                    <div class="text-xs text-muted" th:text="${item.updatedDate}"></div>
+                                </a>
+
+                            </div>
+                        </div>
+                        <div th:if="${admissionList.size() < 1}">
+                            <div class="text-center mt-5">
+                                <h1><i class="fa-solid fa-hourglass"></i></h1>
+                                <h1 class="fw-bold">No Data</h1>
+                            </div>
+                        </div>
+                        <div th:if="${admissionList.size() >= 10}"
+                            class="card-footer bg-light align-items-center text-center">
+                            <a href="/admission">
+                                <b class="btn btn-outline-info px-5">View More</b>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4" id="syllabus">
+                    <div class="card h-100">
                         <div class="card-header bg-success">
                             <div class="text-white fw-500 text-center">
                                 <b>Syllabus</b>
                             </div>
                         </div>
                         <div class="list-group list-group-flush small mb-0 border-bottom">
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Free Bootstrap Themes - 2021 Update
-                                <div class="text-xs text-muted">June 27, 2021</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Bootstrap 5 Templates and Themes Update for Start Bootstrap
-                                <div class="text-xs text-muted">May 21, 2021</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Is Bootstrap Relevant in 2021?
-                                <div class="text-xs text-muted">May 21, 2021</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Introducing Angular Bootstrap Themes and Templates
-                                <div class="text-xs text-muted">April 9, 2020</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Bootstrap 5 Templates and Themes Update for Start Bootstrap
-                                <div class="text-xs text-muted">May 21, 2021</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Is Bootstrap Relevant in 2021?
-                                <div class="text-xs text-muted">May 21, 2021</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Introducing Angular Bootstrap Themes and Templates
-                                <div class="text-xs text-muted">April 9, 2020</div>
-                            </a>
+                            <div th:each="item : ${syllabusList}">
+                                <a class="list-group-item list-group-item-action"
+                                    th:href="@{ '/post/' + ${item.postUrl}}">
+                                    <span th:text="${item.shortTitle}"></span>
+                                    <div class="text-xs text-muted" th:text="${item.updatedDate}"></div>
+                                </a>
+
+                            </div>
                         </div>
-                        <div class="card-footer bg-light align-items-center text-center">
-                            <a href="list.html">
+                        <div th:if="${syllabusList.size() < 1}">
+                            <div class="text-center mt-5">
+                                <h1><i class="fa-solid fa-hourglass"></i></h1>
+                                <h1 class="fw-bold">No Data</h1>
+                            </div>
+                        </div>
+                        <div th:if="${syllabusList.size() >= 10}"
+                            class="card-footer bg-light align-items-center text-center">
+                            <a href="/syllabus">
                                 <b class="btn btn-outline-info px-5">View More</b>
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4" id="other-form">
-                    <div class="card h-60">
+                <div class="col-lg-4" id="admission">
+                    <div class="card h-100">
                         <div class="card-header bg-success">
                             <div class="text-white fw-500 text-center">
-                                <b>Other Forms</b>
+                                <b>Other Form</b>
                             </div>
                         </div>
                         <div class="list-group list-group-flush small mb-0 border-bottom">
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Free Bootstrap Themes - 2021 Update
-                                <div class="text-xs text-muted">June 27, 2021</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Bootstrap 5 Templates and Themes Update for Start Bootstrap
-                                <div class="text-xs text-muted">May 21, 2021</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Is Bootstrap Relevant in 2021?
-                                <div class="text-xs text-muted">May 21, 2021</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Introducing Angular Bootstrap Themes and Templates
-                                <div class="text-xs text-muted">April 9, 2020</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Bootstrap 5 Templates and Themes Update for Start Bootstrap
-                                <div class="text-xs text-muted">May 21, 2021</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Is Bootstrap Relevant in 2021?
-                                <div class="text-xs text-muted">May 21, 2021</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Introducing Angular Bootstrap Themes and Templates
-                                <div class="text-xs text-muted">April 9, 2020</div>
-                            </a>
-                        </div>
-                        <div class="card-footer bg-light align-items-center text-center">
-                            <a href="list.html">
-                                <b class="btn btn-outline-info px-5">View More</b>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4" id="addmission">
-                    <div class="card h-60">
-                        <div class="card-header bg-success">
-                            <div class="text-white fw-500 text-center">
-                                <b>Addmission</b>
+                            <div th:each="item : ${otherFormsList}">
+                                <a class="list-group-item list-group-item-action"
+                                    th:href="@{ '/post/' + ${item.postUrl}}">
+                                    <span th:text="${item.shortTitle}"></span>
+                                    <div class="text-xs text-muted" th:text="${item.updatedDate}"></div>
+                                </a>
+
                             </div>
                         </div>
-                        <div class="list-group list-group-flush small mb-0 border-bottom">
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Free Bootstrap Themes - 2021 Update
-                                <div class="text-xs text-muted">June 27, 2021</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Bootstrap 5 Templates and Themes Update for Start Bootstrap
-                                <div class="text-xs text-muted">May 21, 2021</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Is Bootstrap Relevant in 2021?
-                                <div class="text-xs text-muted">May 21, 2021</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Introducing Angular Bootstrap Themes and Templates
-                                <div class="text-xs text-muted">April 9, 2020</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Bootstrap 5 Templates and Themes Update for Start Bootstrap
-                                <div class="text-xs text-muted">May 21, 2021</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Is Bootstrap Relevant in 2021?
-                                <div class="text-xs text-muted">May 21, 2021</div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" href="#">
-                                Introducing Angular Bootstrap Themes and Templates
-                                <div class="text-xs text-muted">April 9, 2020</div>
-                            </a>
+                        <div th:if="${otherFormsList.size() < 1}">
+                            <div class="text-center mt-5">
+                                <h1><i class="fa-solid fa-hourglass"></i></h1>
+                                <h1 class="fw-bold">No Data</h1>
+                            </div>
                         </div>
-                        <div class="card-footer bg-light align-items-center text-center">
-                            <a href="list.html">
+                        <div th:if="${otherFormsList.size() >= 10}"
+                            class="card-footer bg-light align-items-center text-center">
+                            <a href="/other-form">
                                 <b class="btn btn-outline-info px-5">View More</b>
                             </a>
                         </div>
@@ -439,7 +313,7 @@
     </section>
     <!-- addmission & news section -->
     <!-- service section start -->
-    <div th:replace="fragments :: serviceFragment"></div>
+    <div th:replace="~{fragments :: serviceFragment}"></div>
     <!-- service section ends  -->
     <!-- faq section -->
     <div class="mx-md-3 mx-1">
@@ -552,10 +426,10 @@
         </div>
     </div>
     <!-- faq section ends -->
-    <hr />
+    <br>
     <!-- Footer -->
     <footer class="text-center" style="background: chartreuse;">
-        <div th:replace="fragments :: footerFragment"></div>
+        <div th:replace="~{fragments :: footerFragment}"></div>
     </footer>
     <!-- Footer -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>

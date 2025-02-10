@@ -48,14 +48,14 @@
 
 <body class="bg-body-tertiary">
     <!-- Include the header -->
-    <div th:replace="fragments :: headerFragment"></div>
+    <div th:replace="~{fragments :: headerFragment}"></div>
     <!-- End Header -->
     <main id="main" class="main">
         <!-- blog header -->
         <div class="container-fluid my-2 rounded-2" style="background-color: coral;">
             <div class="p-5 text-center justify-content-center">
                 <h3 class="text-white" th:text="${post.fullTitle}">Default Value</h3>
-                <div class="text-center blinking-text" th:text="${post.updateMsg}" >
+                <div class="text-center blinking-text" th:text="${post.updateMsg}">
 
                 </div>
             </div>
@@ -65,30 +65,31 @@
                 <!-- Author -->
                 <li class="d-flex align-items-center me-4 mb-3 mb-md-0">
                     <i class="fas fa-user me-2 fs-5 fs-md-4"></i> <!-- Author Icon -->
-                    <span class="fs-6 fs-md-5">Arvind kumar</span> <!-- Author Name -->
+                    <span class="fs-6 fs-md-5" th:text="${post.user.name}">Arvind kumar</span> <!-- Author Name -->
                 </li>
-        
+
                 <!-- Date -->
                 <li class="d-flex align-items-center me-4 mb-3 mb-md-0">
                     <i class="fas fa-calendar-day me-2 fs-5 fs-md-4"></i> <!-- Date Icon -->
-                    <span class="fs-6 fs-md-5">2025-02-06</span> <!-- Date -->
+                    <span class="fs-6 fs-md-5" th:text="${post.createdDate}">2025-02-06</span>
+                    <!-- Date -->
                 </li>
-        
+
                 <!-- Views -->
                 <li class="d-flex align-items-center me-4 mb-3 mb-md-0">
                     <i class="fas fa-eye me-2 fs-5 fs-md-4"></i> <!-- Views Icon -->
-                    <span class="fs-6 fs-md-5">1000 Views</span> <!-- Views Count -->
+                    <span class="fs-6 fs-md-5" th:text="${post.views}">1000 Views</span> <!-- Views Count -->
                 </li>
-        
+
                 <!-- Shares -->
                 <li class="d-flex align-items-center mb-3 mb-md-0">
                     <i class="fas fa-share-alt me-2 fs-5 fs-md-4"></i> <!-- Shares Icon -->
-                    <span class="fs-6 fs-md-5">120 Shares</span> <!-- Shares Count -->
+                    <span class="fs-6 fs-md-5" th:text="${post.shares}">120 Shares</span> <!-- Shares Count -->
                 </li>
             </ul>
         </div>
-        
-        
+
+
         <!-- blog header ends -->
         <div class="mx-md-5 mx-1">
             <div class="row g-2 g-xxl-5">
@@ -245,86 +246,92 @@
                                 opportunities!</p>
                         </div>
                     </div>
-                    <div>
-                        <div id="app-additional" class="card mt-1">
-                            <div class="card-header text-white bg-success">
-                                <b>Subscribe
-                                    and
-                                    Share
-                                    With
-                                    your
-                                    Friends!</b>
-                            </div>
-                            <div class="card-body">
-                                <!-- Newsletter 1 - Bootstrap Brain Component -->
-                                <section class=" my-1 p-2">
-                                    <div class="container">
-                                        <div class="row justify-content-md-center">
-                                            <div class="col-12 col-md-9 col-lg-8 col-xl-7 col-xxl-6">
-                                                <b class="mb-4 text-center">Sign
-                                                    up
-                                                    for
-                                                    our
-                                                    newsletter
-                                                    and
-                                                    never
-                                                    miss
-                                                    a
-                                                    thing.</b>
-                                            </div>
-                                        </div>
-                                        <div class="row justify-content-md-center">
-                                            <div class="col-12 col-md-10 col-lg-9 col-xl-8 col-xxl-7">
-                                                <form class="row gy-3 gy-lg-0 gx-lg-2 justify-content-center">
-                                                    <div class="col-12 col-lg-8">
-                                                        <label for="email-newsletter-component"
-                                                            class="visually-hidden">Email
-                                                            Address</label>
-                                                        <input type="email" class="form-control bsb-form-control-3xl"
-                                                            id="email-newsletter-component" value
-                                                            placeholder="Email Address"
-                                                            aria-label="email-newsletter-component"
-                                                            aria-describedby="email-newsletter-help" required>
-                                                        <div id="email-newsletter-help"
-                                                            class="form-text text-center text-lg-start">We'll
-                                                            never
-                                                            share
-                                                            your
-                                                            email
-                                                            with
-                                                            anyone
-                                                            else.</div>
-                                                    </div>
-                                                    <div class="col-12 col-lg-3 text-center text-lg-start">
-                                                        <button type="submit"
-                                                            class="btn btn-primary bsb-btn-3xl">Subscribe</button>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
+                    <div class="card mt-1">
+                        <div class="card-body">
+                            <!-- Newsletter 1 - Bootstrap Brain Component -->
+
+                            <div class="">
+                                <div class="row justify-content-md-center">
+                                    <div class="col-12 col-md-9 col-lg-8 col-xl-7 col-xxl-6">
+                                        <b class="mb-4 text-center">Sign
+                                            up
+                                            for
+                                            our
+                                            newsletter
+                                            and
+                                            never
+                                            miss
+                                            a
+                                            thing.</b>
                                     </div>
-                                </section>
-                                <div class="text-center">
-                                    <!-- Link -->
-                                    <a data-mdb-ripple-init class="btn btn-primary" style="background-color: #55acee;"
-                                        href="#!" role="button"><i class="bi bi-share-fill"></i></a>
-                                    <!-- facebook  -->
-                                    <a data-mdb-ripple-init class="btn btn-primary" style="background-color: #55acee;"
-                                        href="#!" role="button"><i class="fab fa-twitter"></i></a>
-                                    <!-- Google -->
-                                    <a data-mdb-ripple-init class="btn btn-primary" style="background-color: #dd4b39;"
-                                        href="#!" role="button"><i class="fab fa-google"></i></a>
-                                    <!-- Instagram -->
-                                    <a data-mdb-ripple-init class="btn btn-primary" style="background-color: #ac2bac;"
-                                        href="#!" role="button"><i class="fab fa-instagram"></i></a>
-                                    <!-- Linkedin -->
-                                    <a data-mdb-ripple-init class="btn btn-primary" style="background-color: #0082ca;"
-                                        href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                                <div class="row justify-content-md-center">
+                                    <div class="col-12 col-md-10 col-lg-9 col-xl-8 col-xxl-7">
+                                        <form class="row gy-3 gy-lg-0 gx-lg-2 justify-content-center">
+                                            <div class="col-12 col-lg-8">
+                                                <label for="email-newsletter-component" class="visually-hidden">Email
+                                                    Address</label>
+                                                <input type="email" class="form-control bsb-form-control-3xl"
+                                                    id="email-newsletter-component" value placeholder="Email Address"
+                                                    aria-label="email-newsletter-component"
+                                                    aria-describedby="email-newsletter-help" required>
+                                            </div>
+                                            <div class="col-12 col-lg-3 text-center text-lg-start">
+                                                <button type="submit"
+                                                    class="btn btn-primary bsb-btn-3xl">Subscribe</button>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
+                            <br>
+                            <div class="text-center">
+                                <!-- Share Current Page URL -->
+                                <a data-mdb-ripple-init class="btn btn-primary" style="background-color: #55acee;"
+                                    href="#"
+                                    th:href="'https://www.facebook.com/sharer/sharer.php?u=https://bharatresult.com/post/' + ${post.postUrl}"
+                                    role="button">
+                                    <i class="bi bi-share-fill"></i>
+                                </a>
+
+                                <!-- Twitter -->
+                                <a data-mdb-ripple-init class="btn btn-primary" style="background-color: #55acee;"
+                                    href="#"
+                                    th:href="'https://twitter.com/intent/tweet?url=https://bharatresult.com/post/' + ${post.postUrl}"
+                                    role="button">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+
+                                <!-- WhatsApp -->
+                                <a data-mdb-ripple-init class="btn btn-primary" style="background-color: #25D366;"
+                                    href="#"
+                                    th:href="'https://wa.me/?text=https://bharatresult.com/post/' + ${post.postUrl}"
+                                    role="button">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+
+
+                                <!-- Instagram -->
+                                <a data-mdb-ripple-init class="btn btn-primary" style="background-color: #ac2bac;"
+                                    href="#"
+                                    th:href="'https://www.instagram.com/?url=https://bharatresult.com/post/' + ${post.postUrl}"
+                                    role="button">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+
+                                <!-- LinkedIn -->
+                                <a data-mdb-ripple-init class="btn btn-primary" style="background-color: #0082ca;"
+                                    href="#"
+                                    th:href="'https://www.linkedin.com/sharing/share-offsite/?url=https://bharatresult.com/post/' + ${post.postUrl}"
+                                    role="button">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+
                         </div>
                     </div>
                 </div>
+
                 <div class="col-lg-4">
                     <div class="sticky-top">
                         <div class="card h-50 mb-2">
@@ -400,9 +407,12 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
-        <div th:replace="fragments::serviceFragment">
+
+
+        <div th:replace="~{fragments::serviceFragment}">
             <!-- tools from fragment -->
         </div>
         <br>
@@ -410,7 +420,7 @@
     <!-- End #main -->
     <!-- Footer -->
     <footer class="text-center" style="background: chartreuse;">
-        <div th:replace="fragments :: footerFragment"></div>
+        <div th:replace="~{fragments :: footerFragment}"></div>
     </footer>
     <!-- Footer -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
