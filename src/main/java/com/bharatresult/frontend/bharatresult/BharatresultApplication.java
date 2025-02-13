@@ -9,8 +9,9 @@ import org.springframework.cache.annotation.EnableCaching;
 public class BharatresultApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BharatresultApplication.class, args); 
+		SpringApplication.run(BharatresultApplication.class, args);
 		System.out.println("started....");
+
 	}
 
 }

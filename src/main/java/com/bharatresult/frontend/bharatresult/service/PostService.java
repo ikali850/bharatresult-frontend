@@ -37,7 +37,7 @@ public class PostService {
         return postRepo.findByCategoryLikeAndIsPublishTrue(categoryPattern, pageable);
     }
 
-    @Cacheable(value = "postdata", key = "#url")
+    @Cacheable(value = "postData", key = "#url")
     public Post getPost(String url) {
         logger.info("getPost method called in PostService with url" + url);
         return this.postRepo.findByPostUrl(url).get();
@@ -79,7 +79,7 @@ public class PostService {
 
     }
 
-    @Cacheable(value = "admitCardData", key = "#pageNumber")
+    @Cacheable(value = "admitcardData", key = "#pageNumber")
     public PostDto<Post> getExams(int rowSize, int pageNumber) {
         Page<Post> resulsList = getPostsByCategory("admit card", rowSize, pageNumber);
         PostDto<Post> postDto = new PostDto<>();
@@ -97,7 +97,7 @@ public class PostService {
         return postDto;
     }
 
-    @Cacheable(value = "otherFormData", key = "#pageNumber")
+    @Cacheable(value = "otherformData", key = "#pageNumber")
     public PostDto<Post> getOtherForms(int rowSize, int pageNumber) {
         Page<Post> resulsList = getPostsByCategory("other form", rowSize, pageNumber);
         PostDto<Post> postDto = new PostDto<>();

@@ -60,34 +60,32 @@
                 </div>
             </div>
         </div>
-        <div class="bg-info py-3 mb-1 fw-bold text-white">
-            <ul class=" px-1 mx-1 list-unstyled d-flex flex-wrap justify-content-start align-items-center mb-0">
-                <!-- Author -->
-                <li class="d-flex align-items-center me-4 mb-3 mb-md-0">
-                    <i class="fas fa-user me-2 fs-5 fs-md-4"></i> <!-- Author Icon -->
-                    <span class="fs-6 fs-md-5" th:text="${post.user.name}">Arvind kumar</span> <!-- Author Name -->
-                </li>
 
-                <!-- Date -->
-                <li class="d-flex align-items-center me-4 mb-3 mb-md-0">
-                    <i class="fas fa-calendar-day me-2 fs-5 fs-md-4"></i> <!-- Date Icon -->
-                    <span class="fs-6 fs-md-5" th:text="${post.createdDate}">2025-02-06</span>
-                    <!-- Date -->
-                </li>
 
-                <!-- Views -->
-                <li class="d-flex align-items-center me-4 mb-3 mb-md-0">
-                    <i class="fas fa-eye me-2 fs-5 fs-md-4"></i> <!-- Views Icon -->
-                    <span class="fs-6 fs-md-5" th:text="${post.views}">1000 Views</span> <!-- Views Count -->
-                </li>
-
-                <!-- Shares -->
-                <li class="d-flex align-items-center mb-3 mb-md-0">
-                    <i class="fas fa-share-alt me-2 fs-5 fs-md-4"></i> <!-- Shares Icon -->
-                    <span class="fs-6 fs-md-5" th:text="${post.shares}">120 Shares</span> <!-- Shares Count -->
-                </li>
-            </ul>
+        <div class="mx-1">
+            <table class="table table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Author</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Views</th>
+                        <th scope="col" class="d-none d-md-table-cell">Likes</th>
+                        <th scope="col">Share</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-dark fw-bold" th:text="${post.user.name}">Arvind Kumar</td>
+                        <td class="text-dark fw-bold" th:text="${#strings.substring(post.createdDate, 0, 10)}">
+                            2025-02-06</td>
+                        <td class="text-dark fw-bold" th:text="${post.views}">150</td>
+                        <td class="text-dark fw-bold d-none d-md-table-cell">0</td>
+                        <td class="text-dark fw-bold" th:text="${post.shares}">120</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
+
 
 
         <!-- blog header ends -->

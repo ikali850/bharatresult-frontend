@@ -62,7 +62,7 @@
                                 <a class="list-group-item list-group-item-action"
                                     th:href="@{ '/post/' + ${item.postUrl}}">
                                     <span th:text="${item.shortTitle}"></span>
-                                    <div class="text-xs text-muted" th:text="${item.updatedDate}"></div>
+                                    <div class="text-xs text-muted" th:text="${#strings.substring(item.updatedDate, 0, 10)}"></div>
                                 </a>
 
                             </div>

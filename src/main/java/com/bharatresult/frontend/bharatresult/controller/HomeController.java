@@ -5,7 +5,13 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.Cache;
+import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.data.domain.Page;
+import org.springframework.data.redis.connection.ReturnType;
+import org.springframework.data.redis.core.RedisCallback;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -26,6 +32,7 @@ import com.bharatresult.frontend.bharatresult.entity.Post;
 import com.bharatresult.frontend.bharatresult.entity.TrendingPost;
 import com.bharatresult.frontend.bharatresult.repository.MessageUsRepo;
 import com.bharatresult.frontend.bharatresult.service.PostService;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class HomeController {
@@ -34,6 +41,8 @@ public class HomeController {
     private MessageUsRepo messageUsRepo;
     @Autowired
     private PostService postService;
+    @Autowired
+    private RedisTemplate redisTemplate;
 
     public static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
@@ -272,6 +281,12 @@ public class HomeController {
         }
         redirectAttributes.addFlashAttribute("errorMsg", "Something went wrong!");
         return new ModelAndView(new RedirectView("/contact-us"));
+    }
+
+    @GetMapping("/clear-cache")
+    public ModelAndView clearCache() {
+        redisTemplate.getConnectionFactory().getConnection().flushAll();
+        return new ModelAndView(new RedirectView("/"));
     }
 
 }
