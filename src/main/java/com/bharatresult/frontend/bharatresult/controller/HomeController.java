@@ -1,5 +1,6 @@
 package com.bharatresult.frontend.bharatresult.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -80,7 +81,9 @@ public class HomeController {
     public ModelAndView getPost(@PathVariable("url") String url) {
         logger.info("GET Post Called with URL :" + url);
         Post post = this.postService.getPost(url);
+        List<Post> recentPosts = this.postService.getLastFiftenPosts();
         ModelAndView mv = new ModelAndView("blog");
+        mv.addObject("recentPosts", recentPosts);
         mv.addObject("post", post);
         return mv;
     }
@@ -91,6 +94,8 @@ public class HomeController {
         ModelAndView mv = new ModelAndView("list");
         Page<Post> postPagesList = this.postService.getResults(25, 0).getPage();
         List<Post> postList = postPagesList.getContent();
+        List<Post> recentPosts = this.postService.getLastFiftenPosts();
+        mv.addObject("recentPosts", recentPosts);
         mv.addObject("pageTitle", "Result");
         mv.addObject("currentPage", 1);
         mv.addObject("totalPages", postPagesList.getTotalPages());
@@ -104,6 +109,8 @@ public class HomeController {
         ModelAndView mv = new ModelAndView("list");
         Page<Post> postPagesList = this.postService.getResults(25, pageNo - 1).getPage();
         List<Post> postList = postPagesList.getContent();
+        List<Post> recentPosts = this.postService.getLastFiftenPosts();
+        mv.addObject("recentPosts", recentPosts);
         mv.addObject("pageTitle", "Result");
         mv.addObject("currentPage", pageNo);
         mv.addObject("totalPages", postPagesList.getTotalPages());
@@ -117,6 +124,8 @@ public class HomeController {
         ModelAndView mv = new ModelAndView("list");
         Page<Post> postPagesList = this.postService.getSyllbus(25, 0).getPage();
         List<Post> postList = postPagesList.getContent();
+        List<Post> recentPosts = this.postService.getLastFiftenPosts();
+        mv.addObject("recentPosts", recentPosts);
         mv.addObject("pageTitle", "Syllabus");
         mv.addObject("currentPage", 1);
         mv.addObject("totalPages", postPagesList.getTotalPages());
@@ -130,6 +139,8 @@ public class HomeController {
         ModelAndView mv = new ModelAndView("list");
         Page<Post> postPagesList = this.postService.getSyllbus(25, pageNo - 1).getPage();
         List<Post> postList = postPagesList.getContent();
+        List<Post> recentPosts = this.postService.getLastFiftenPosts();
+        mv.addObject("recentPosts", recentPosts);
         mv.addObject("pageTitle", "Syllabus");
         mv.addObject("currentPage", pageNo);
         mv.addObject("totalPages", postPagesList.getTotalPages());
@@ -143,6 +154,8 @@ public class HomeController {
         ModelAndView mv = new ModelAndView("list");
         Page<Post> postPagesList = this.postService.getJobs(25, 0).getPage();
         List<Post> postList = postPagesList.getContent();
+        List<Post> recentPosts = this.postService.getLastFiftenPosts();
+        mv.addObject("recentPosts", recentPosts);
         mv.addObject("pageTitle", "Job");
         mv.addObject("currentPage", 1);
         mv.addObject("totalPages", postPagesList.getTotalPages());
@@ -156,6 +169,8 @@ public class HomeController {
         ModelAndView mv = new ModelAndView("list");
         Page<Post> postPagesList = this.postService.getJobs(25, pageNo - 1).getPage();
         List<Post> postList = postPagesList.getContent();
+        List<Post> recentPosts = this.postService.getLastFiftenPosts();
+        mv.addObject("recentPosts", recentPosts);
         mv.addObject("pageTitle", "Job");
         mv.addObject("currentPage", pageNo);
         mv.addObject("totalPages", postPagesList.getTotalPages());
@@ -169,6 +184,8 @@ public class HomeController {
         ModelAndView mv = new ModelAndView("list");
         Page<Post> postPagesList = this.postService.getExams(25, 0).getPage();
         List<Post> postList = postPagesList.getContent();
+        List<Post> recentPosts = this.postService.getLastFiftenPosts();
+        mv.addObject("recentPosts", recentPosts);
         mv.addObject("pageTitle", "Admit-Card");
         mv.addObject("currentPage", 1);
         mv.addObject("totalPages", postPagesList.getTotalPages());
@@ -182,6 +199,8 @@ public class HomeController {
         ModelAndView mv = new ModelAndView("list");
         Page<Post> postPagesList = this.postService.getJobs(25, pageNo - 1).getPage();
         List<Post> postList = postPagesList.getContent();
+        List<Post> recentPosts = this.postService.getLastFiftenPosts();
+        mv.addObject("recentPosts", recentPosts);
         mv.addObject("pageTitle", "Admit-Card");
         mv.addObject("currentPage", pageNo);
         mv.addObject("totalPages", postPagesList.getTotalPages());
@@ -195,6 +214,8 @@ public class HomeController {
         ModelAndView mv = new ModelAndView("list");
         Page<Post> postPagesList = this.postService.getOtherForms(25, 0).getPage();
         List<Post> postList = postPagesList.getContent();
+        List<Post> recentPosts = this.postService.getLastFiftenPosts();
+        mv.addObject("recentPosts", recentPosts);
         mv.addObject("pageTitle", "Other-form");
         mv.addObject("currentPage", 1);
         mv.addObject("totalPages", postPagesList.getTotalPages());
@@ -208,6 +229,8 @@ public class HomeController {
         ModelAndView mv = new ModelAndView("list");
         Page<Post> postPagesList = this.postService.getOtherForms(25, pageNo - 1).getPage();
         List<Post> postList = postPagesList.getContent();
+        List<Post> recentPosts = this.postService.getLastFiftenPosts();
+        mv.addObject("recentPosts", recentPosts);
         mv.addObject("pageTitle", "Other-form");
         mv.addObject("currentPage", pageNo);
         mv.addObject("totalPages", postPagesList.getTotalPages());
@@ -221,6 +244,8 @@ public class HomeController {
         ModelAndView mv = new ModelAndView("list");
         Page<Post> postPagesList = this.postService.getAdmissions(25, 0).getPage();
         List<Post> postList = postPagesList.getContent();
+        List<Post> recentPosts = this.postService.getLastFiftenPosts();
+        mv.addObject("recentPosts", recentPosts);
         mv.addObject("pageTitle", "admission");
         mv.addObject("currentPage", 1);
         mv.addObject("totalPages", postPagesList.getTotalPages());
@@ -234,6 +259,8 @@ public class HomeController {
         ModelAndView mv = new ModelAndView("list");
         Page<Post> postPagesList = this.postService.getAdmissions(25, pageNo - 1).getPage();
         List<Post> postList = postPagesList.getContent();
+        List<Post> recentPosts = this.postService.getLastFiftenPosts();
+        mv.addObject("recentPosts", recentPosts);
         mv.addObject("pageTitle", "admission");
         mv.addObject("currentPage", pageNo);
         mv.addObject("totalPages", postPagesList.getTotalPages());

@@ -12,7 +12,7 @@
     <div class="bg-success" th:fragment="headerFragment">
         <!-- Header starts -->
         <div class="container" style="width: fit-content;">
-            <h1 class="display-3 fw-bold mb-1 text-dark text-center">
+            <h1 style="font-style: oblique;" class="display-2 fw-bold mb-1 text-dark text-center">
                 <span class="writing-effect text-white">BharatResult.com</span>
             </h1>
         </div>
@@ -54,6 +54,12 @@
                 </a>
             </div>
             <div class="mobile-bottom-nav__item">
+                <a href="/tools" class="mobile-bottom-nav__item-content">
+                    <i class="material-icons">construction</i>
+                    Tools
+                </a>
+            </div>
+            <div class="mobile-bottom-nav__item">
                 <a href="/service" class="mobile-bottom-nav__item-content">
                     <i class="material-icons">diversity_3</i>
                     Service
@@ -66,7 +72,7 @@
     <div class="bg-success" th:fragment="headerFragment2">
         <!-- Header starts -->
         <div class="container" style="width: fit-content;">
-            <h1 class="display-3 fw-bold mb-1 text-dark text-center">
+            <h1 style="font-style: oblique;" class="display-2 fw-bold mb-1 text-dark text-center">
                 <span class="writing-effect text-white">BharatResult.com</span>
             </h1>
         </div>
@@ -105,6 +111,12 @@
                 <a href="#results" class="mobile-bottom-nav__item-content">
                     <i class="material-icons">book</i>
                     Result
+                </a>
+            </div>
+            <div class="mobile-bottom-nav__item">
+                <a href="#tools" class="mobile-bottom-nav__item-content">
+                    <i class="material-icons">construction</i>
+                    Tools
                 </a>
             </div>
             <div class="mobile-bottom-nav__item">
@@ -266,7 +278,7 @@
     </div>
     <!-- service box fragment -->
     <div th:fragment="serviceFragment">
-        <div id="service" class="mx-md-3 mx-1">
+        <div id="service" class=" service mx-md-3 mx-1">
             <div class="card mt-1">
                 <div class="card-header text-white bg-success">
                     <b>Services</b>
@@ -315,17 +327,17 @@
                                 </div>
                             </a>
                         </div>
-                        <!-- Text to Speech -->
+                       <!-- image background changer -->
                         <div class="col d-flex align-items-start">
-                            <a href="#!" class="d-flex align-items-start text-decoration-none text-muted p-1">
+                            <a href="https://www.remove.bg/t/change-background" class="d-flex align-items-start text-decoration-none text-muted p-1">
                                 <i class="fas fa-volume-up me-3" style="font-size: 1.75em;"></i>
-                                <div><span class="badge bg-warning text-dark">Coming Soon</span>
-                                    <h4 class="fw-bold mb-0">Text to Speech</h4>
+                                <div>
+                                    <h4 class="fw-bold mb-0">Image Background Changer</h4>
                                     <p>Convert written text into speech to make content more accessible.</p>
                                 </div>
                             </a>
                         </div>
-                        <!-- Speech to Text -->
+                        
                         <div class="col d-flex align-items-start">
                             <a href="#!" class="d-flex align-items-start text-decoration-none text-muted p-1">
                                 <i class="fas fa-microphone-alt me-3" style="font-size: 1.75em;"></i>
@@ -359,10 +371,84 @@
                 </div>
             </div>
         </div>
-
-
-
     </div>
+    <!-- tools fragment -->
+    <div th:fragment="toolsFragment">
+        <div id="tools" class="service mx-md-3 mx-1">
+            <div class="card mt-1">
+                <div class="card-header text-white bg-success">
+                    <b>Tools</b>
+                </div>
+                <div class="card-body">
+                    <div class="row row-cols-1 row-cols-sm-4 row-cols-md-4 g-2 py-2">
+                        <div class="col d-flex align-items-start">
+                            <a href="https://image.pi7.org/passport-size-photo" class="d-flex align-items-start text-decoration-none text-muted p-1">
+                                <i class="fas fa-file-image me-3" style="font-size: 1.75em;"></i>
+                                <div>
+                                    <h4 class="fw-bold mb-0">Passport Photo</h4>
+                                    <p>Generate passport-size photos with precise dimensions and formats required for official use.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <a href="https://image.pi7.org/reduce-image-size-in-kb" class="d-flex align-items-start text-decoration-none text-muted p-1">
+                                <i class="fas fa-compress me-3" style="font-size: 1.75em;"></i>
+                                <div>
+                                    <h4 class="fw-bold mb-0">Image Compressor</h4>
+                                    <p>Reduce image size while maintaining quality, making them suitable for web and document use.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <a href="https://image.pi7.org/remove-image-background" class="d-flex align-items-start text-decoration-none text-muted p-1">
+                                <i class="fas fa-cut me-3" style="font-size: 1.75em;"></i>
+                                <div>
+                                    <h4 class="fw-bold mb-0">Remove Background</h4>
+                                    <p>Automatically remove image backgrounds to create transparent or new backgrounds effortlessly.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <a href="https://image.pi7.org/generate-signature" class="d-flex align-items-start text-decoration-none text-muted p-1">
+                                <i class="fas fa-signature me-3" style="font-size: 1.75em;"></i>
+                                <div>
+                                    <h4 class="fw-bold mb-0">Signature Maker</h4>
+                                    <p>Create custom digital signatures for documents, contracts, and online forms instantly.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <a href="https://image.pi7.org/add-name-and-date-on-photo" class="d-flex align-items-start text-decoration-none text-muted p-1">
+                                <i class="fas fa-user-tag me-3" style="font-size: 1.75em;"></i>
+                                <div>
+                                    <h4 class="fw-bold mb-0">Add Text</h4>
+                                    <p>Add names, dates, and personalized text to photos easily with customizable fonts and colors.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <a href="https://image.pi7.org/image-to-pdf" class="d-flex align-items-start text-decoration-none text-muted p-1">
+                                <i class="fas fa-file-pdf me-3" style="font-size: 1.75em;"></i>
+                                <div>
+                                    <h4 class="fw-bold mb-0">Image to PDF</h4>
+                                    <p>Convert images into high-quality PDF files for easy sharing and printing purposes.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <a href="https://image.pi7.org/pdf-to-image" class="d-flex align-items-start text-decoration-none text-muted p-1">
+                                <i class="fas fa-file-image me-3" style="font-size: 1.75em;"></i>
+                                <div>
+                                    <h4 class="fw-bold mb-0">PDF to Image</h4>
+                                    <p>Extract images from PDF documents or convert entire pages into high-resolution images.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>      
 </body>
 
 </html>

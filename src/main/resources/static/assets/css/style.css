@@ -9,7 +9,7 @@ body a {
     text-decoration: none;
 }
 
-#service a:hover {
+.service a:hover {
     border-radius: 5px;
     background-color: greenyellow;
 }
@@ -135,5 +135,14 @@ body a {
     tbody{
         font-size: x-small;
         text-align: left;
+    }
+}
+@media (min-width: 576px) { /* Applies only on screens larger than 576px (Bootstrap 'sm' breakpoint) */
+    .truncate {
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
     }
 }

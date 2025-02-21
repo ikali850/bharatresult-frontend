@@ -43,7 +43,7 @@ public class PostService {
         return this.postRepo.findByPostUrl(url).get();
     }
 
-    @Cacheable(value = "trendingPostData",key = "#root.methodName")
+    @Cacheable(value = "trendingPostData", key = "#root.methodName")
     public List<TrendingPost> getTrendingPosts() {
 
         return this.trendingPostRepo.findAll();
@@ -104,6 +104,12 @@ public class PostService {
         postDto.setItems(resulsList.getContent());
         postDto.setPage(resulsList);
         return postDto;
+    }
+
+    @Cacheable(value = "recentTen",key = "#root.methodName")
+    public List<Post> getLastFiftenPosts() {
+        List<Post> recetTenPosts = this.postRepo.findTop10ByIsPublishTrueOrderByUpdatedDateDesc();
+        return recetTenPosts;
     }
 
 }

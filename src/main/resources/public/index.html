@@ -125,7 +125,7 @@
                             <div th:each="item : ${jobList}">
                                 <a class="list-group-item list-group-item-action"
                                     th:href="@{ '/post/' + ${item.postUrl}}">
-                                    <span th:text="${item.shortTitle}"></span>
+                                    <span class="truncate" th:text="${item.shortTitle}"></span>
                                     <div class="text-xs text-muted" th:text="${#strings.substring(item.createdDate, 0, 10)}"></div>
                                 </a>
 
@@ -156,7 +156,7 @@
                             <div th:each="item : ${admitCardList}">
                                 <a class="list-group-item list-group-item-action"
                                     th:href="@{ '/post/' + ${item.postUrl}}">
-                                    <span th:text="${item.shortTitle}"></span>
+                                    <span class="truncate" th:text="${item.shortTitle}"></span>
                                     <div class="text-xs text-muted" th:text="${#strings.substring(item.createdDate, 0, 10)}"></div>
                                 </a>
 
@@ -187,7 +187,7 @@
                             <div th:each="item : ${resultList}">
                                 <a class="list-group-item list-group-item-action"
                                     th:href="@{ '/post/' + ${item.postUrl}}">
-                                    <span th:text="${item.shortTitle}"></span>
+                                    <span class="truncate" th:text="${item.shortTitle}"></span>
                                     <div class="text-xs text-muted" th:text="${#strings.substring(item.createdDate, 0, 10)}"></div>
                                 </a>
 
@@ -226,7 +226,7 @@
                             <div th:each="item : ${admissionList}">
                                 <a class="list-group-item list-group-item-action"
                                     th:href="@{ '/post/' + ${item.postUrl}}">
-                                    <span th:text="${item.shortTitle}"></span>
+                                    <span class="truncate" th:text="${item.shortTitle}"></span>
                                     <div class="text-xs text-muted" th:text="${#strings.substring(item.createdDate, 0, 10)}"></div>
                                 </a>
 
@@ -257,7 +257,7 @@
                             <div th:each="item : ${syllabusList}">
                                 <a class="list-group-item list-group-item-action"
                                     th:href="@{ '/post/' + ${item.postUrl}}">
-                                    <span th:text="${item.shortTitle}"></span>
+                                    <span class="truncate" th:text="${item.shortTitle}"></span>
                                     <div class="text-xs text-muted" th:text="${#strings.substring(item.createdDate, 0, 10)}"></div>
                                 </a>
 
@@ -288,7 +288,7 @@
                             <div th:each="item : ${otherFormsList}">
                                 <a class="list-group-item list-group-item-action"
                                     th:href="@{ '/post/' + ${item.postUrl}}">
-                                    <span th:text="${item.shortTitle}"></span>
+                                    <span class="truncate" th:text="${item.shortTitle}"></span>
                                     <div class="text-xs text-muted" th:text="${#strings.substring(item.createdDate, 0, 10)}"></div>
                                 </a>
 
@@ -312,6 +312,9 @@
         </div>
     </section>
     <!-- addmission & news section -->
+     <!-- tools fragments  -->
+     <div th:replace="~{fragments :: toolsFragment}"></div>
+
     <!-- service section start -->
     <div th:replace="~{fragments :: serviceFragment}"></div>
     <!-- service section ends  -->
@@ -428,7 +431,7 @@
     <!-- faq section ends -->
     <br>
     <!-- Footer -->
-    <footer class="text-center" style="background: chartreuse;">
+    <footer class="text-center" style="background: yellowgreen;">
         <div th:replace="~{fragments :: footerFragment}"></div>
     </footer>
     <!-- Footer -->
