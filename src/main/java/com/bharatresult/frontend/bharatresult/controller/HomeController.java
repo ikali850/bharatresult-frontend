@@ -268,6 +268,22 @@ public class HomeController {
         return mv;
     }
 
+    @GetMapping("/scheme")
+    public ModelAndView schemePage() {
+        logger.info("scheme page called!");
+        ModelAndView mv = new ModelAndView("list");
+        Page<Post> postPagesList = this.postService.getSchemes(25, 0).getPage();
+        List<Post> postList = postPagesList.getContent();
+        List<Post> recentPosts = this.postService.getLastFiftenPosts();
+        mv.addObject("recentPosts", recentPosts);
+        mv.addObject("pageTitle", "scheme");
+        mv.addObject("currentPage", 1);
+        mv.addObject("totalPages", postPagesList.getTotalPages());
+        mv.addObject("postList", postList);
+        return mv;
+    }
+
+
     @GetMapping("/contact-us")
     public ModelAndView contactUsPage() {
         logger.info("contact  us page called!");

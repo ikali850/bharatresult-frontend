@@ -105,6 +105,14 @@ public class PostService {
         postDto.setPage(resulsList);
         return postDto;
     }
+    @Cacheable(value = "schemeData", key = "#pageNumber")
+    public PostDto<Post> getSchemes(int rowSize, int pageNumber) {
+        Page<Post> resulsList = getPostsByCategory("scheme", rowSize, pageNumber);
+        PostDto<Post> postDto = new PostDto<>();
+        postDto.setItems(resulsList.getContent());
+        postDto.setPage(resulsList);
+        return postDto;
+    }
 
     @Cacheable(value = "recentTen",key = "#root.methodName")
     public List<Post> getLastFiftenPosts() {
