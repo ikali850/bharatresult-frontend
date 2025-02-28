@@ -30,8 +30,10 @@ import org.springframework.web.servlet.view.RedirectView;
 
 import com.bharatresult.frontend.bharatresult.entity.Messages;
 import com.bharatresult.frontend.bharatresult.entity.Post;
+import com.bharatresult.frontend.bharatresult.entity.PostMetrics;
 import com.bharatresult.frontend.bharatresult.entity.TrendingPost;
 import com.bharatresult.frontend.bharatresult.repository.MessageUsRepo;
+import com.bharatresult.frontend.bharatresult.service.PostMetricsService;
 import com.bharatresult.frontend.bharatresult.service.PostService;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -44,6 +46,8 @@ public class HomeController {
     private PostService postService;
     @Autowired
     private RedisTemplate redisTemplate;
+    @Autowired
+    private PostMetricsService postMetricsService;
 
     public static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
@@ -81,10 +85,12 @@ public class HomeController {
     public ModelAndView getPost(@PathVariable("url") String url) {
         logger.info("GET Post Called with URL :" + url);
         Post post = this.postService.getPost(url);
+        PostMetrics postMetrics = postMetricsService.getPostMetrics(post.getId());
         List<Post> recentPosts = this.postService.getLastFiftenPosts();
         ModelAndView mv = new ModelAndView("blog");
         mv.addObject("recentPosts", recentPosts);
         mv.addObject("post", post);
+        mv.addObject("postMetrics", postMetrics);
         return mv;
     }
 
@@ -312,6 +318,12 @@ public class HomeController {
     public ModelAndView errorPage() {
         logger.error("error page called!");
         return new ModelAndView("error.html", HttpStatus.OK);
+    }
+
+    @GetMapping("/sitemap")
+    public ModelAndView siteMap() {
+        logger.error("sitemap page called!");
+        return new ModelAndView("sitemap.html", HttpStatus.OK);
     }
 
     @PostMapping("/message")
