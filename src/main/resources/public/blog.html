@@ -44,6 +44,14 @@
             color: green;
             animation: blink 1s infinite;
         }
+
+        .title {
+            padding: 8px;
+            background-color: brown;
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+        }
     </style>
 </head>
 
@@ -77,24 +85,24 @@
 
         <div class="mx-1">
             <table class="table ">
-                <thead class="table bg-warning">
-                    <tr>
-                        <th class="text-white" scope="col">Author</th>
-                        <th class="text-white" scope="col">Updated On</th>
-                        <th class="text-white" scope="col">Views</th>
-                        <th scope="col" class="d-none d-md-table-cell text-white">Likes</th>
-                        <th class="text-white" scope="col">Share</th>
+                <thead class="table">
+                    <tr class="text-center">
+                        <th class="fw-bold" scope="col">Author</th>
+                        <th class="fw-bold" scope="col">Updated On</th>
+                        <th class="fw-bold" scope="col">Views</th>
+                        <th scope="col" class="d-none d-md-table-cell fw-bold">Likes</th>
+                        <th class="fw-bold" scope="col">Share</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td class="text-dark fw-bold" th:text="${post.user.name}">Arvind Kumar</td>
-                        <td class="text-dark fw-bold" th:text="${#strings.substring(post.createdDate, 0, 10)}">
+                    <tr class="text-center">
+                        <td class="text-dark fw-500" th:text="${post.user.name}">Arvind Kumar</td>
+                        <td class="text-dark fw-500" th:text="${#strings.substring(post.createdDate, 0, 10)}">
                             2025-02-06</td>
-                        <td class="text-dark fw-bold" id="viewCount" th:text="${postMetrics.view}">150</td>
-                        <td class="text-dark fw-bold d-none d-md-table-cell" id="likeCount"
+                        <td class="text-dark fw-500" id="viewCount" th:text="${postMetrics.view}">150</td>
+                        <td class="text-dark fw-500 d-none d-md-table-cell" id="likeCount"
                             th:text="${postMetrics.likes}">0</td>
-                        <td class="text-dark fw-bold" id="shareCount" th:text="${postMetrics.share}">120</td>
+                        <td class="text-dark fw-500" id="shareCount" th:text="${postMetrics.share}">120</td>
                         <td class="d-none" id="postId" th:text="${postMetrics.postId}">120</td>
 
                     </tr>
@@ -106,156 +114,559 @@
             <div class="row g-2 g-xxl-5">
                 <!-- th:utext="${post.content}" add this to below div for post content -->
                 <div class="col-lg-8">
-                    <div class="card">
-                        <div class="card-header text-white bg-success">
-                            <strong>Top 5 Travel Destinations</strong>
-                        </div>
-                        <div class="card-body">
-                            <p>Explore the world's most stunning travel spots. Whether you're looking for adventure or
-                                relaxation, these destinations offer something for everyone:</p>
-                            <table class="table">
+                    <div>
+                        <h4 class="title">Basic Information</h4>
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <td class="fw-bold">Organization Name</td>
+                                    <td>Staff Selection Commission (SSC)</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">Description</td>
+                                    <td>The Staff Selection Commission (SSC) is an organization under the Government of
+                                        India to recruit staff for various posts in the various Ministries and
+                                        Departments of the Government of India and in Subordinate Offices.</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold"> Contact Number</td>
+                                    <td>Not provided in the document</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">Post Title</td>
+                                    <td>Constable (GD) in Central Armed Police Forces (CAPFs) and SSF, Rifleman (GD) in
+                                        Assam Rifles, and Sepoy in Narcotics Control Bureau Examination-2025</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">Website</td>
+                                    <td><a href="https://ssc.gov.in">https://ssc.gov.in</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <h4 class="title">Dates</h4>
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <td><b>Start Date for Online Application</b></td>
+                                    <td>05.09.2024</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Last Date for Application</b></td>
+                                    <td>14.10.2024</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Last Date for Fee Payment</b></td>
+                                    <td>15.10.2024</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Last Date for Correction</b></td>
+                                    <td>07.11.2024</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Admit Card Release</b></td>
+                                    <td>3-7 days before the Examination</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Exam Schedule</b></td>
+                                    <td>January - February 2025</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Merit List Publication</b></td>
+                                    <td>Post-examination, date to be announced</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <div>
+                        <h4 class="title">Application Fee</h4>
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <td><b>Application Fee</b></td>
+                                    <td>₹100/- (Rupees One Hundred Only)</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Fee Exemption</b></td>
+                                    <td>Women candidates and candidates belonging to SC, ST, and Ex-Servicemen (ESM)
+                                        eligible for reservation are exempted from payment of fee.</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Payment Mode</b></td>
+                                    <td>Online through BHIM UPI, Net Banking, or by using Visa, MasterCard, Maestro,
+                                        RuPay Debit cards.</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Last Date for Fee Payment</b></td>
+                                    <td>15.10.2024 (23:00)</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Correction Charges (First Time)</b></td>
+                                    <td>₹200/- (Rupees Two Hundred Only)</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Correction Charges (Second Time)</b></td>
+                                    <td>₹500/- (Rupees Five Hundred Only)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <div class="table-responsive">
+                        <h4 class="title">Eligiblity Critera</h4>
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <td><b>Educational Qualifications</b></td>
+                                    <td>
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th><b>Criteria</b></th>
+                                                    <th><b>Details</b></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><b>Minimum Qualification</b></td>
+                                                    <td>Passed Matriculation or 10th Class Examination from a recognized
+                                                        Board/University as of 01-01-2025</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><b>Physical and Age Requirements</b></td>
+                                    <td>
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th><b>Criteria</b></th>
+                                                    <th><b>Details</b></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><b>Age Limit</b></td>
+                                                    <td>18-23 years as of 01-01-2025 (Age relaxation: SC/ST - 5 years,
+                                                        OBC - 3 years, Ex-Servicemen - 3 years after deduction of
+                                                        military service)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><b>Height (Male)</b></td>
+                                                    <td>170 cms (Relaxation: ST - 162.5 cms, Other categories - 165.0
+                                                        cms)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><b>Height (Female)</b></td>
+                                                    <td>157 cms (Relaxation: ST - 150.0 cms, Other categories - 155.0
+                                                        cms)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><b>Chest (Male)</b></td>
+                                                    <td>Unexpanded - 80 cms, Minimum Expansion - 5 cms (Relaxation: ST -
+                                                        76 cms, Other categories - 78 cms)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><b>Weight</b></td>
+                                                    <td>Proportionate to height and age as per medical standards</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><b>Physical Efficiency Test (Male)</b></td>
+                                                    <td>5 Kms in 24 minutes (Ladakh Region: 1.6 Kms in 7 minutes)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><b>Physical Efficiency Test (Female)</b></td>
+                                                    <td>1.6 Kms in 8 1/2 minutes (Ladakh Region: 800 meters in 5
+                                                        minutes)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><b>Medical Standards</b></td>
+                                                    <td>Good mental and bodily health, free from any physical defect
+                                                        likely to interfere with the efficient performance of duties
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><b>Nationality</b></td>
+                                                    <td>Indian</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><b>Domicile</b></td>
+                                                    <td>Submit domicile certificate of the State/UT indicated in the
+                                                        online application form at the time of Document Verification
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                    <div>
+                        <h4 class="title">Post Details</h4>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
                                 <thead>
                                     <tr>
-                                        <th>Destination</th>
-                                        <th>Country</th>
-                                        <th>Highlight</th>
+                                        <th><b>Force</b></th>
+                                        <th><b>Post</b></th>
+                                        <th><b>Number of Posts (Male)</b></th>
+                                        <th><b>Number of Posts (Female)</b></th>
+                                        <th><b>Total Posts</b></th>
+                                        <th><b>Pay Scale</b></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>Bali</td>
-                                        <td>Indonesia</td>
-                                        <td>Beaches & Temples</td>
+                                        <td>Border Security Force (BSF)</td>
+                                        <td>Constable (General Duty)</td>
+                                        <td>13,306</td>
+                                        <td>2,348</td>
+                                        <td>15,654</td>
+                                        <td>₹21,700 - ₹69,100 (Pay Level - 3)</td>
                                     </tr>
                                     <tr>
-                                        <td>Paris</td>
-                                        <td>France</td>
-                                        <td>Eiffel Tower</td>
+                                        <td>Central Industrial Security Force (CISF)</td>
+                                        <td>Constable (General Duty)</td>
+                                        <td>6,430</td>
+                                        <td>715</td>
+                                        <td>7,145</td>
+                                        <td>₹21,700 - ₹69,100 (Pay Level - 3)</td>
                                     </tr>
                                     <tr>
-                                        <td>Tokyo</td>
-                                        <td>Japan</td>
-                                        <td>Cultural Heritage</td>
+                                        <td>Central Reserve Police Force (CRPF)</td>
+                                        <td>Constable (General Duty)</td>
+                                        <td>11,299</td>
+                                        <td>242</td>
+                                        <td>11,541</td>
+                                        <td>₹21,700 - ₹69,100 (Pay Level - 3)</td>
                                     </tr>
                                     <tr>
-                                        <td>New York</td>
-                                        <td>USA</td>
-                                        <td>City Life</td>
+                                        <td>Sashastra Seema Bal (SSB)</td>
+                                        <td>Constable (General Duty)</td>
+                                        <td>819</td>
+                                        <td>0</td>
+                                        <td>819</td>
+                                        <td>₹21,700 - ₹69,100 (Pay Level - 3)</td>
                                     </tr>
                                     <tr>
-                                        <td>Cape Town</td>
-                                        <td>South Africa</td>
-                                        <td>Table Mountain</td>
+                                        <td>Indo Tibetan Border Police (ITBP)</td>
+                                        <td>Constable (General Duty)</td>
+                                        <td>2,564</td>
+                                        <td>453</td>
+                                        <td>3,017</td>
+                                        <td>₹21,700 - ₹69,100 (Pay Level - 3)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Assam Rifles (AR)</td>
+                                        <td>Rifleman (General Duty)</td>
+                                        <td>1,148</td>
+                                        <td>100</td>
+                                        <td>1,248</td>
+                                        <td>₹21,700 - ₹69,100 (Pay Level - 3)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Secretariat Security Force (SSF)</td>
+                                        <td>Constable (General Duty)</td>
+                                        <td>35</td>
+                                        <td>0</td>
+                                        <td>35</td>
+                                        <td>₹21,700 - ₹69,100 (Pay Level - 3)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Narcotics Control Bureau (NCB)</td>
+                                        <td>Sepoy</td>
+                                        <td>11</td>
+                                        <td>11</td>
+                                        <td>22</td>
+                                        <td>₹18,000 - ₹56,900 (Pay Level - 1)</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-header text-white bg-success">
-                            <strong>Top 5 Travel Destinations</strong>
-                        </div>
-                        <div class="card-body">
-                            <p>Explore the world's most stunning travel spots. Whether you're looking for adventure or
-                                relaxation, these destinations offer something for everyone. From breathtaking
-                                landscapes to vibrant cultures, the world is filled with incredible places waiting to be
-                                discovered.</p>
-                            <p><strong>Bali, Indonesia</strong>: Known for its beautiful beaches and rich culture, Bali
-                                is a tropical paradise. Visitors can enjoy surfing, sunbathing, and exploring ancient
-                                temples. Don't miss the rice terraces in Ubud and the lively markets filled with local
-                                crafts.</p>
-                            <p><strong>Paris, France</strong>: The city of love offers iconic landmarks like the Eiffel
-                                Tower and the Louvre Museum. Stroll along the Seine River, indulge in French cuisine at
-                                charming cafes, and soak in the artistic atmosphere of Montmartre.</p>
-                            <p><strong>Tokyo, Japan</strong>: A bustling metropolis that seamlessly blends tradition and
-                                modernity. Explore historic temples, enjoy delicious sushi, and experience the vibrant
-                                nightlife in Shibuya. The cherry blossoms in spring are a must-see!</p>
-                            <p><strong>New York City, USA</strong>: Known as "The Big Apple," New York offers a diverse
-                                array of attractions. Visit Times Square, Central Park, and the Statue of Liberty. The
-                                city's cultural scene is unmatched, with world-class museums and Broadway shows.</p>
-                            <p><strong>Cape Town, South Africa</strong>: Famous for its stunning coastline and Table
-                                Mountain, Cape Town is a gem in Africa. Hike up the mountain for breathtaking views,
-                                visit the historic Robben Island, and enjoy local wines in the nearby vineyards.</p>
-                            <p>Each of these destinations provides unique experiences that can enrich your life.
-                                Traveling not only allows you to see new places but also helps you to understand
-                                different cultures and perspectives. Plan your next adventure and make unforgettable
-                                memories!</p>
+                    <div>
+                        <h4 class="title">Post Category Wise</h4>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Force</th>
+                                        <th>Category</th>
+                                        <th>Male</th>
+                                        <th>Female</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="5">BSF</td>
+                                        <td>SC</td>
+                                        <td>2,018</td>
+                                        <td>356</td>
+                                        <td>2,374</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ST</td>
+                                        <td>1,489</td>
+                                        <td>262</td>
+                                        <td>1,751</td>
+                                    </tr>
+                                    <tr>
+                                        <td>OBC</td>
+                                        <td>2,906</td>
+                                        <td>510</td>
+                                        <td>3,416</td>
+                                    </tr>
+                                    <tr>
+                                        <td>EWS</td>
+                                        <td>1,330</td>
+                                        <td>234</td>
+                                        <td>1,564</td>
+                                    </tr>
+                                    <tr>
+                                        <td>UR</td>
+                                        <td>5,563</td>
+                                        <td>986</td>
+                                        <td>6,549</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="5">CISF</td>
+                                        <td>SC</td>
+                                        <td>959</td>
+                                        <td>106</td>
+                                        <td>1,065</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ST</td>
+                                        <td>687</td>
+                                        <td>71</td>
+                                        <td>758</td>
+                                    </tr>
+                                    <tr>
+                                        <td>OBC</td>
+                                        <td>1,442</td>
+                                        <td>156</td>
+                                        <td>1,598</td>
+                                    </tr>
+                                    <tr>
+                                        <td>EWS</td>
+                                        <td>644</td>
+                                        <td>74</td>
+                                        <td>718</td>
+                                    </tr>
+                                    <tr>
+                                        <td>UR</td>
+                                        <td>2,720</td>
+                                        <td>308</td>
+                                        <td>3,028</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="5">CRPF</td>
+                                        <td>SC</td>
+                                        <td>1,681</td>
+                                        <td>34</td>
+                                        <td>1,715</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ST</td>
+                                        <td>1,213</td>
+                                        <td>20</td>
+                                        <td>1,233</td>
+                                    </tr>
+                                    <tr>
+                                        <td>OBC</td>
+                                        <td>2,510</td>
+                                        <td>53</td>
+                                        <td>2,563</td>
+                                    </tr>
+                                    <tr>
+                                        <td>EWS</td>
+                                        <td>1,130</td>
+                                        <td>19</td>
+                                        <td>1,149</td>
+                                    </tr>
+                                    <tr>
+                                        <td>UR</td>
+                                        <td>4,765</td>
+                                        <td>116</td>
+                                        <td>4,881</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="4">SSB</td>
+                                        <td>SC</td>
+                                        <td>122</td>
+                                        <td>0</td>
+                                        <td>122</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ST</td>
+                                        <td>79</td>
+                                        <td>0</td>
+                                        <td>79</td>
+                                    </tr>
+                                    <tr>
+                                        <td>OBC</td>
+                                        <td>187</td>
+                                        <td>0</td>
+                                        <td>187</td>
+                                    </tr>
+                                    <tr>
+                                        <td>EWS</td>
+                                        <td>82</td>
+                                        <td>0</td>
+                                        <td>82</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="5">ITBP</td>
+                                        <td>SC</td>
+                                        <td>345</td>
+                                        <td>59</td>
+                                        <td>404</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ST</td>
+                                        <td>326</td>
+                                        <td>59</td>
+                                        <td>385</td>
+                                    </tr>
+                                    <tr>
+                                        <td>OBC</td>
+                                        <td>505</td>
+                                        <td>90</td>
+                                        <td>595</td>
+                                    </tr>
+                                    <tr>
+                                        <td>EWS</td>
+                                        <td>197</td>
+                                        <td>21</td>
+                                        <td>218</td>
+                                    </tr>
+                                    <tr>
+                                        <td>UR</td>
+                                        <td>1,191</td>
+                                        <td>224</td>
+                                        <td>1,415</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="5">Assam Rifles</td>
+                                        <td>SC</td>
+                                        <td>124</td>
+                                        <td>9</td>
+                                        <td>133</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ST</td>
+                                        <td>223</td>
+                                        <td>21</td>
+                                        <td>244</td>
+                                    </tr>
+                                    <tr>
+                                        <td>OBC</td>
+                                        <td>205</td>
+                                        <td>16</td>
+                                        <td>221</td>
+                                    </tr>
+                                    <tr>
+                                        <td>EWS</td>
+                                        <td>109</td>
+                                        <td>6</td>
+                                        <td>115</td>
+                                    </tr>
+                                    <tr>
+                                        <td>UR</td>
+                                        <td>487</td>
+                                        <td>48</td>
+                                        <td>535</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="2">SSF</td>
+                                        <td>SC</td>
+                                        <td>5</td>
+                                        <td>0</td>
+                                        <td>5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ST</td>
+                                        <td>3</td>
+                                        <td>0</td>
+                                        <td>3</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="2">NCB</td>
+                                        <td>SC</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ST</td>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td>1</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-header text-white bg-success">
-                            <strong>Healthy Eating Tips for Everyone</strong>
-                        </div>
-                        <div class="card-body">
-                            <p>Adopting a healthy diet can transform your life. It impacts not only your physical health
-                                but also your mental well-being. Here are essential tips for incorporating healthy
-                                eating habits into your daily routine.</p>
-                            <p><strong>1. Incorporate a Variety of Fruits and Vegetables:</strong> Aim for at least five
-                                servings a day. Different colors of fruits and vegetables provide various nutrients, so
-                                include greens, reds, yellows, and purples in your meals.</p>
-                            <p><strong>2. Stay Hydrated:</strong> Water is vital for your body. Drinking enough water
-                                helps maintain energy levels and supports metabolic functions. Aim for eight 8-ounce
-                                glasses daily, adjusting for activity level and climate.</p>
-                            <p><strong>3. Choose Whole Grains:</strong> Whole grains are richer in nutrients than
-                                refined grains. Opt for whole grain bread, brown rice, and oatmeal. These foods are
-                                higher in fiber, which aids digestion and keeps you full longer.</p>
-                            <p><strong>4. Limit Added Sugars and Saturated Fats:</strong> Excessive sugar and unhealthy
-                                fats can lead to chronic health issues. Check labels and try to avoid processed foods
-                                high in these ingredients. Instead, opt for natural sources of sweetness like fruits.
-                            </p>
-                            <p><strong>5. Practice Portion Control:</strong> Be mindful of portion sizes to avoid
-                                overeating. Using smaller plates and bowls can help manage serving sizes. Listening to
-                                your body's hunger cues is also essential.</p>
-                            <p><strong>6. Plan Your Meals:</strong> Preparing meals ahead of time can save you from
-                                unhealthy last-minute choices. Create a weekly meal plan, incorporating a variety of
-                                healthy options to keep things interesting.</p>
-                            <p><strong>7. Be Mindful While Eating:</strong> Eating without distractions, like phones or
-                                TVs, allows you to savor your food and recognize when you're full. This mindfulness can
-                                prevent overeating and enhance your dining experience.</p>
-                            <p>By adopting these habits, you can improve your overall health and well-being. Remember,
-                                it's not just about making drastic changes but rather incorporating small, sustainable
-                                habits into your lifestyle.</p>
-                        </div>
+                    <div>
+                        <h4 class="title">How to Apply</h4>
+                        <ul>
+                            <li><b>One-Time Registration:</b> Visit the official SSC website, click on ‘Register Now’
+                                and complete the registration process.</li>
+                            <li><b>Filling the Online Application Form:</b> Log in using your Registration Number and
+                                Password, fill in the required details, and upload your photograph and signature.</li>
+                            <li><b>Photograph and Signature:</b> Ensure your photograph and signature meet the specified
+                                requirements before uploading.</li>
+                            <li><b>Preview and Verify:</b> Double-check all entered details and ensure everything is
+                                correct before final submission.</li>
+                            <li><b>Submit:</b> Submit the application form online.</li>
+                            <li><b>Correction Window:</b> If needed, use the correction window period to make any
+                                necessary changes to your application form.</li>
+                        </ul>
+
                     </div>
-                    <div class="card">
-                        <div class="card-header text-white bg-success">
-                            <strong>Latest Tech Trends to Watch</strong>
-                        </div>
-                        <div class="card-body">
-                            <p>Stay ahead in the tech world! Understanding the latest trends can help you prepare for
-                                the future, whether you’re a professional, a business owner, or a tech enthusiast. Here
-                                are some key trends shaping the industry:</p>
-                            <p><strong>1. Artificial Intelligence and Machine Learning:</strong> AI is revolutionizing
-                                how we interact with technology. From virtual assistants to predictive analytics,
-                                businesses are leveraging AI to improve efficiency and decision-making. Understanding
-                                machine learning algorithms is becoming increasingly valuable.</p>
-                            <p><strong>2. 5G Connectivity:</strong> The rollout of 5G technology promises faster
-                                internet speeds and more reliable connections. This will enhance experiences in areas
-                                like streaming, online gaming, and IoT devices, enabling smarter cities and connected
-                                living.</p>
-                            <p><strong>3. Internet of Things (IoT):</strong> IoT devices are becoming ubiquitous,
-                                allowing everyday objects to connect to the internet and communicate with each other.
-                                This trend will improve automation in homes and industries, leading to greater
-                                efficiency and data collection.</p>
-                            <p><strong>4. Blockchain Technology:</strong> Initially developed for cryptocurrencies,
-                                blockchain is now being applied in various sectors, including supply chain management
-                                and healthcare. Its ability to provide transparency and security in transactions makes
-                                it a valuable tool.</p>
-                            <p><strong>5. Cybersecurity Innovations:</strong> As technology advances, so do cyber
-                                threats. Companies are investing in advanced cybersecurity measures to protect sensitive
-                                data. Learning about cybersecurity best practices is essential for individuals and
-                                organizations alike.</p>
-                            <p><strong>6. Remote Work Technologies:</strong> The rise of remote work has prompted
-                                innovation in collaboration tools. Applications like Zoom, Slack, and project management
-                                software have become crucial for maintaining productivity and communication.</p>
-                            <p><strong>7. Sustainable Tech:</strong> There is a growing emphasis on sustainability in
-                                tech development. Companies are focusing on reducing their carbon footprints and
-                                creating eco-friendly products. Understanding the intersection of technology and
-                                sustainability is becoming increasingly important.</p>
-                            <p>By staying informed about these trends, you can position yourself to adapt and thrive in
-                                an ever-evolving technological landscape. Embrace the changes, and be ready to seize new
-                                opportunities!</p>
-                        </div>
+                    <div>
+                        <h4 class="title">Link</h4>
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <td><b>Apply Link</b></td>
+                                    <td><a href="https://ssc.gov.in">https://ssc.gov.in</a></td>
+                                </tr>
+                                <tr>
+                                    <td><b>Download Notification</b></td>
+                                    <td><a href="https://ssc.gov.in">https://ssc.gov.in</a></td>
+                                </tr>
+                                <tr>
+                                    <td><b>Login to Official Website</b></td>
+                                    <td><a href="https://ssc.gov.in">https://ssc.gov.in</a></td>
+                                </tr>
+                                <tr>
+                                    <td><b>CRPF Website</b></td>
+                                    <td><a href="http://www.crpf.gov.in">http://www.crpf.gov.in</a></td>
+                                </tr>
+                                <tr>
+                                    <td><b>SSC Regional Offices</b></td>
+                                    <td><a href="http://www.ssc-cr.org">http://www.ssc-cr.org</a></td>
+                                </tr>
+                                <tr>
+                                    <td><b>Admit Card Download</b></td>
+                                    <td><a href="https://ssc.gov.in">https://ssc.gov.in</a></td>
+                                </tr>
+                                <tr>
+                                    <td><b>Answer Key</b></td>
+                                    <td><a href="https://ssc.gov.in">https://ssc.gov.in</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
                     </div>
                     <div class="card mt-1">
                         <div class="card-body">

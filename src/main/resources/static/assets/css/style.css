@@ -139,7 +139,7 @@ body a {
 /* Extra small devices (phones, portrait) */
 @media (max-width: 576px) {
     tbody{
-        font-size: x-small;
+        font-size: small;
         text-align: left;
     }
 }

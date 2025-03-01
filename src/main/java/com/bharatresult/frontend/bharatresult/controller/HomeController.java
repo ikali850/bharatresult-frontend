@@ -343,5 +343,10 @@ public class HomeController {
         redisTemplate.getConnectionFactory().getConnection().flushAll();
         return new ModelAndView(new RedirectView("/"));
     }
+    @GetMapping("/test")
+    public String testMethod() {
+        return "test.html";
+    }
+    
 
 }

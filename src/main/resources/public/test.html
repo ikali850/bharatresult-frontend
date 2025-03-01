@@ -1,178 +1,737 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content name="description" />
+    <meta content name="keywords" />
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+    <!--head-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="/stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-    <title>Hello, world!</title>
-  </head>
-  <body>
-    <br><br>
-    <div class="p-2 fw-bold text-white bg-success"><h5>Vacancies</h5></div>
-    <div class="mx-1">
-        <div class="">
+    <!-- Template Main CSS File -->
+    <link href="/assets/css/style.css" rel="stylesheet" />
+    <style>
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .blinking-text {
+            text-align: center;
+            font-weight: bold;
+            font-size: 15px;
+            color: green;
+            animation: blink 1s infinite;
+        }
+
+        .title {
+            padding: 5px;
+            background-color: black;
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        /* Horizontal scrolling navbar */
+        .scroll-nav {
+            white-space: nowrap;
+            overflow-x: auto;
+            display: flex;
+            gap: 10px;
+            padding: 5px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .scroll-nav a {
+            text-decoration: none;
+            padding: 8px 10px;
+            /* background: #007bff; */
+            color: black;
+            border-radius: 5px;
+            display: inline-block;
+            flex-shrink: 0;
+        }
+
+        .scroll-nav a:hover {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body class="bg-body-tertiary">
+    <!-- Include the header -->
+    <div th:replace="~{fragments :: headerFragment}"></div>
+    <!-- End Header -->
+    <main id="main" class="main px-1 mt-1">
+        <!-- Horizontal Scroll Navbar -->
+        <div id="scroll-navbar" class="scroll-nav"></div>
+        <div>
+            <h4 class="title">Basic Information</h4>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="fw-bold">Organization Name</td>
+                        <td>Staff Selection Commission (SSC)</td>
+                    </tr>
+                    <tr>
+                        <td class="fw-bold">Description</td>
+                        <td>The Staff Selection Commission (SSC) is an organization under the Government of
+                            India to recruit staff for various posts in the various Ministries and
+                            Departments of the Government of India and in Subordinate Offices.</td>
+                    </tr>
+                    <tr>
+                        <td class="fw-bold"> Contact Number</td>
+                        <td>Not provided in the document</td>
+                    </tr>
+                    <tr>
+                        <td class="fw-bold">Post Title</td>
+                        <td>Constable (GD) in Central Armed Police Forces (CAPFs) and SSF, Rifleman (GD) in
+                            Assam Rifles, and Sepoy in Narcotics Control Bureau Examination-2025</td>
+                    </tr>
+                    <tr>
+                        <td class="fw-bold">Website</td>
+                        <td><a href="https://ssc.gov.in">https://ssc.gov.in</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <h4 class="title">Dates</h4>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td><b>Start Date for Online Application</b></td>
+                        <td>05.09.2024</td>
+                    </tr>
+                    <tr>
+                        <td><b>Last Date for Application</b></td>
+                        <td>14.10.2024</td>
+                    </tr>
+                    <tr>
+                        <td><b>Last Date for Fee Payment</b></td>
+                        <td>15.10.2024</td>
+                    </tr>
+                    <tr>
+                        <td><b>Last Date for Correction</b></td>
+                        <td>07.11.2024</td>
+                    </tr>
+                    <tr>
+                        <td><b>Admit Card Release</b></td>
+                        <td>3-7 days before the Examination</td>
+                    </tr>
+                    <tr>
+                        <td><b>Exam Schedule</b></td>
+                        <td>January - February 2025</td>
+                    </tr>
+                    <tr>
+                        <td><b>Merit List Publication</b></td>
+                        <td>Post-examination, date to be announced</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <div>
+            <h4 class="title">Application Fee</h4>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td><b>Application Fee</b></td>
+                        <td>₹100/- (Rupees One Hundred Only)</td>
+                    </tr>
+                    <tr>
+                        <td><b>Fee Exemption</b></td>
+                        <td>Women candidates and candidates belonging to SC, ST, and Ex-Servicemen (ESM)
+                            eligible for reservation are exempted from payment of fee.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Payment Mode</b></td>
+                        <td>Online through BHIM UPI, Net Banking, or by using Visa, MasterCard, Maestro,
+                            RuPay Debit cards.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Last Date for Fee Payment</b></td>
+                        <td>15.10.2024 (23:00)</td>
+                    </tr>
+                    <tr>
+                        <td><b>Correction Charges (First Time)</b></td>
+                        <td>₹200/- (Rupees Two Hundred Only)</td>
+                    </tr>
+                    <tr>
+                        <td><b>Correction Charges (Second Time)</b></td>
+                        <td>₹500/- (Rupees Five Hundred Only)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <div class="table-responsive">
+            <h4 class="title">Eligiblity Critera</h4>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td><b>Educational Qualifications</b></td>
+                        <td>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th><b>Criteria</b></th>
+                                        <th><b>Details</b></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><b>Minimum Qualification</b></td>
+                                        <td>Passed Matriculation or 10th Class Examination from a recognized
+                                            Board/University as of 01-01-2025</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>Physical and Age Requirements</b></td>
+                        <td>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th><b>Criteria</b></th>
+                                        <th><b>Details</b></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><b>Age Limit</b></td>
+                                        <td>18-23 years as of 01-01-2025 (Age relaxation: SC/ST - 5 years,
+                                            OBC - 3 years, Ex-Servicemen - 3 years after deduction of
+                                            military service)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Height (Male)</b></td>
+                                        <td>170 cms (Relaxation: ST - 162.5 cms, Other categories - 165.0
+                                            cms)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Height (Female)</b></td>
+                                        <td>157 cms (Relaxation: ST - 150.0 cms, Other categories - 155.0
+                                            cms)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Chest (Male)</b></td>
+                                        <td>Unexpanded - 80 cms, Minimum Expansion - 5 cms (Relaxation: ST -
+                                            76 cms, Other categories - 78 cms)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Weight</b></td>
+                                        <td>Proportionate to height and age as per medical standards</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Physical Efficiency Test (Male)</b></td>
+                                        <td>5 Kms in 24 minutes (Ladakh Region: 1.6 Kms in 7 minutes)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Physical Efficiency Test (Female)</b></td>
+                                        <td>1.6 Kms in 8 1/2 minutes (Ladakh Region: 800 meters in 5
+                                            minutes)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Medical Standards</b></td>
+                                        <td>Good mental and bodily health, free from any physical defect
+                                            likely to interfere with the efficient performance of duties
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Nationality</b></td>
+                                        <td>Indian</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Domicile</b></td>
+                                        <td>Submit domicile certificate of the State/UT indicated in the
+                                            online application form at the time of Document Verification
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+        </div>
+        <div>
+            <h4 class="title">Post Details</h4>
             <div class="table-responsive">
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                             <th class="fw-bold">Force</th>
-                             <th class="fw-bold">SC (Male)</th>
-                             <th class="fw-bold">SC (Female)</th>
-                             <th class="fw-bold">ST (Male)</th>
-                             <th class="fw-bold">ST (Female)</th>
-                             <th class="fw-bold">OBC (Male)</th>
-                             <th class="fw-bold">OBC (Female)</th>
-                             <th class="fw-bold">EWS (Male)</th>
-                             <th class="fw-bold">EWS (Female)</th>
-                             <th class="fw-bold">UR (Male)</th>
-                             <th class="fw-bold">UR (Female)</th>
-                             <th class="fw-bold">Total Vacancies</th>
+                            <th><b>Force</b></th>
+                            <th><b>Post</b></th>
+                            <th><b>Number of Posts (Male)</b></th>
+                            <th><b>Number of Posts (Female)</b></th>
+                            <th><b>Total Posts</b></th>
+                            <th><b>Pay Scale</b></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="fw-bold text-danger">BSF</td>
-                            <td>2,018</td>
-                            <td>356</td>
-                            <td>1,489</td>
-                            <td>262</td>
-                            <td>2,906</td>
-                            <td>510</td>
-                            <td>1,330</td>
-                            <td>234</td>
-                            <td>5,563</td>
-                            <td>986</td>
+                            <td>Border Security Force (BSF)</td>
+                            <td>Constable (General Duty)</td>
+                            <td>13,306</td>
+                            <td>2,348</td>
                             <td>15,654</td>
+                            <td>₹21,700 - ₹69,100 (Pay Level - 3)</td>
                         </tr>
                         <tr>
-                            <td class="fw-bold">CISF</td>
-                            <td>959</td>
-                            <td>106</td>
-                            <td>687</td>
-                            <td>71</td>
-                            <td>1,142</td>
-                            <td>156</td>
-                            <td>644</td>
-                            <td>74</td>
-                            <td>2,720</td>
-                            <td>308</td>
+                            <td>Central Industrial Security Force (CISF)</td>
+                            <td>Constable (General Duty)</td>
+                            <td>6,430</td>
+                            <td>715</td>
                             <td>7,145</td>
+                            <td>₹21,700 - ₹69,100 (Pay Level - 3)</td>
                         </tr>
                         <tr>
-                            <td class="fw-bold">CRPF</td>
-                            <td>1,681</td>
-                            <td>34</td>
-                            <td>1,213</td>
-                            <td>20</td>
-                            <td>2,510</td>
-                            <td>53</td>
-                            <td>1,130</td>
-                            <td>19</td>
-                            <td>4,765</td>
-                            <td>116</td>
+                            <td>Central Reserve Police Force (CRPF)</td>
+                            <td>Constable (General Duty)</td>
+                            <td>11,299</td>
+                            <td>242</td>
                             <td>11,541</td>
+                            <td>₹21,700 - ₹69,100 (Pay Level - 3)</td>
                         </tr>
                         <tr>
-                            <td class="fw-bold">SSB</td>
-                            <td>122</td>
-                            <td>0</td>
-                            <td>79</td>
-                            <td>0</td>
-                            <td>187</td>
-                            <td>0</td>
-                            <td>82</td>
-                            <td>0</td>
-                            <td>349</td>
+                            <td>Sashastra Seema Bal (SSB)</td>
+                            <td>Constable (General Duty)</td>
+                            <td>819</td>
                             <td>0</td>
                             <td>819</td>
+                            <td>₹21,700 - ₹69,100 (Pay Level - 3)</td>
                         </tr>
                         <tr>
-                            <td class="fw-bold">ITBP</td>
-                            <td>345</td>
-                            <td>59</td>
-                            <td>326</td>
-                            <td>59</td>
-                            <td>505</td>
-                            <td>90</td>
-                            <td>197</td>
-                            <td>21</td>
-                            <td>1,191</td>
-                            <td>224</td>
+                            <td>Indo Tibetan Border Police (ITBP)</td>
+                            <td>Constable (General Duty)</td>
+                            <td>2,564</td>
+                            <td>453</td>
                             <td>3,017</td>
+                            <td>₹21,700 - ₹69,100 (Pay Level - 3)</td>
                         </tr>
                         <tr>
-                            <td class="fw-bold">AR</td>
-                            <td>124</td>
-                            <td>9</td>
-                            <td>223</td>
-                            <td>21</td>
-                            <td>205</td>
-                            <td>16</td>
-                            <td>109</td>
-                            <td>6</td>
-                            <td>487</td>
-                            <td>48</td>
+                            <td>Assam Rifles (AR)</td>
+                            <td>Rifleman (General Duty)</td>
+                            <td>1,148</td>
+                            <td>100</td>
                             <td>1,248</td>
+                            <td>₹21,700 - ₹69,100 (Pay Level - 3)</td>
                         </tr>
                         <tr>
-                            <td class="fw-bold">SSF</td>
-                            <td>5</td>
-                            <td>0</td>
-                            <td>3</td>
-                            <td>0</td>
-                            <td>9</td>
-                            <td>0</td>
-                            <td>4</td>
-                            <td>0</td>
-                            <td>14</td>
+                            <td>Secretariat Security Force (SSF)</td>
+                            <td>Constable (General Duty)</td>
+                            <td>35</td>
                             <td>0</td>
                             <td>35</td>
+                            <td>₹21,700 - ₹69,100 (Pay Level - 3)</td>
                         </tr>
                         <tr>
-                            <td class="fw-bold">NCB</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>1</td>
-                            <td>0</td>
-                            <td>5</td>
-                            <td>4</td>
-                            <td>0</td>
-                            <td>1</td>
-                            <td>5</td>
-                            <td>6</td>
+                            <td>Narcotics Control Bureau (NCB)</td>
+                            <td>Sepoy</td>
+                            <td>11</td>
+                            <td>11</td>
                             <td>22</td>
-                        </tr>
-                        <tr>
-                            <td class="fw-bold">Total</td>
-                            <td>5,254</td>
-                            <td>564</td>
-                            <td>4,021</td>
-                            <td>433</td>
-                            <td>7,747</td>
-                            <td>829</td>
-                            <td>3,496</td>
-                            <td>355</td>
-                            <td>15,094</td>
-                            <td>1,688</td>
-                            <td>39,481</td>
+                            <td>₹18,000 - ₹56,900 (Pay Level - 1)</td>
                         </tr>
                     </tbody>
                 </table>
-    
+            </div>
+        </div>
+        <div>
+            <h4 class="title">Post Category Wise</h4>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Force</th>
+                            <th>Category</th>
+                            <th>Male</th>
+                            <th>Female</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="5">BSF</td>
+                            <td>SC</td>
+                            <td>2,018</td>
+                            <td>356</td>
+                            <td>2,374</td>
+                        </tr>
+                        <tr>
+                            <td>ST</td>
+                            <td>1,489</td>
+                            <td>262</td>
+                            <td>1,751</td>
+                        </tr>
+                        <tr>
+                            <td>OBC</td>
+                            <td>2,906</td>
+                            <td>510</td>
+                            <td>3,416</td>
+                        </tr>
+                        <tr>
+                            <td>EWS</td>
+                            <td>1,330</td>
+                            <td>234</td>
+                            <td>1,564</td>
+                        </tr>
+                        <tr>
+                            <td>UR</td>
+                            <td>5,563</td>
+                            <td>986</td>
+                            <td>6,549</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="5">CISF</td>
+                            <td>SC</td>
+                            <td>959</td>
+                            <td>106</td>
+                            <td>1,065</td>
+                        </tr>
+                        <tr>
+                            <td>ST</td>
+                            <td>687</td>
+                            <td>71</td>
+                            <td>758</td>
+                        </tr>
+                        <tr>
+                            <td>OBC</td>
+                            <td>1,442</td>
+                            <td>156</td>
+                            <td>1,598</td>
+                        </tr>
+                        <tr>
+                            <td>EWS</td>
+                            <td>644</td>
+                            <td>74</td>
+                            <td>718</td>
+                        </tr>
+                        <tr>
+                            <td>UR</td>
+                            <td>2,720</td>
+                            <td>308</td>
+                            <td>3,028</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="5">CRPF</td>
+                            <td>SC</td>
+                            <td>1,681</td>
+                            <td>34</td>
+                            <td>1,715</td>
+                        </tr>
+                        <tr>
+                            <td>ST</td>
+                            <td>1,213</td>
+                            <td>20</td>
+                            <td>1,233</td>
+                        </tr>
+                        <tr>
+                            <td>OBC</td>
+                            <td>2,510</td>
+                            <td>53</td>
+                            <td>2,563</td>
+                        </tr>
+                        <tr>
+                            <td>EWS</td>
+                            <td>1,130</td>
+                            <td>19</td>
+                            <td>1,149</td>
+                        </tr>
+                        <tr>
+                            <td>UR</td>
+                            <td>4,765</td>
+                            <td>116</td>
+                            <td>4,881</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="4">SSB</td>
+                            <td>SC</td>
+                            <td>122</td>
+                            <td>0</td>
+                            <td>122</td>
+                        </tr>
+                        <tr>
+                            <td>ST</td>
+                            <td>79</td>
+                            <td>0</td>
+                            <td>79</td>
+                        </tr>
+                        <tr>
+                            <td>OBC</td>
+                            <td>187</td>
+                            <td>0</td>
+                            <td>187</td>
+                        </tr>
+                        <tr>
+                            <td>EWS</td>
+                            <td>82</td>
+                            <td>0</td>
+                            <td>82</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="5">ITBP</td>
+                            <td>SC</td>
+                            <td>345</td>
+                            <td>59</td>
+                            <td>404</td>
+                        </tr>
+                        <tr>
+                            <td>ST</td>
+                            <td>326</td>
+                            <td>59</td>
+                            <td>385</td>
+                        </tr>
+                        <tr>
+                            <td>OBC</td>
+                            <td>505</td>
+                            <td>90</td>
+                            <td>595</td>
+                        </tr>
+                        <tr>
+                            <td>EWS</td>
+                            <td>197</td>
+                            <td>21</td>
+                            <td>218</td>
+                        </tr>
+                        <tr>
+                            <td>UR</td>
+                            <td>1,191</td>
+                            <td>224</td>
+                            <td>1,415</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="5">Assam Rifles</td>
+                            <td>SC</td>
+                            <td>124</td>
+                            <td>9</td>
+                            <td>133</td>
+                        </tr>
+                        <tr>
+                            <td>ST</td>
+                            <td>223</td>
+                            <td>21</td>
+                            <td>244</td>
+                        </tr>
+                        <tr>
+                            <td>OBC</td>
+                            <td>205</td>
+                            <td>16</td>
+                            <td>221</td>
+                        </tr>
+                        <tr>
+                            <td>EWS</td>
+                            <td>109</td>
+                            <td>6</td>
+                            <td>115</td>
+                        </tr>
+                        <tr>
+                            <td>UR</td>
+                            <td>487</td>
+                            <td>48</td>
+                            <td>535</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">SSF</td>
+                            <td>SC</td>
+                            <td>5</td>
+                            <td>0</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>ST</td>
+                            <td>3</td>
+                            <td>0</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">NCB</td>
+                            <td>SC</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>ST</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div>
+            <h4 class="title">How to Apply</h4>
+            <ul>
+                <li><b>One-Time Registration:</b> Visit the official SSC website, click on ‘Register Now’
+                    and complete the registration process.</li>
+                <li><b>Filling the Online Application Form:</b> Log in using your Registration Number and
+                    Password, fill in the required details, and upload your photograph and signature.</li>
+                <li><b>Photograph and Signature:</b> Ensure your photograph and signature meet the specified
+                    requirements before uploading.</li>
+                <li><b>Preview and Verify:</b> Double-check all entered details and ensure everything is
+                    correct before final submission.</li>
+                <li><b>Submit:</b> Submit the application form online.</li>
+                <li><b>Correction Window:</b> If needed, use the correction window period to make any
+                    necessary changes to your application form.</li>
+            </ul>
 
-    <!-- Optional JavaScript; choose one of the two! -->
+        </div>
+        <div>
+            <h4 class="title">Link</h4>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td><b>Apply Link</b></td>
+                        <td><a href="https://ssc.gov.in">https://ssc.gov.in</a></td>
+                    </tr>
+                    <tr>
+                        <td><b>Download Notification</b></td>
+                        <td><a href="https://ssc.gov.in">https://ssc.gov.in</a></td>
+                    </tr>
+                    <tr>
+                        <td><b>Login to Official Website</b></td>
+                        <td><a href="https://ssc.gov.in">https://ssc.gov.in</a></td>
+                    </tr>
+                    <tr>
+                        <td><b>CRPF Website</b></td>
+                        <td><a href="http://www.crpf.gov.in">http://www.crpf.gov.in</a></td>
+                    </tr>
+                    <tr>
+                        <td><b>SSC Regional Offices</b></td>
+                        <td><a href="http://www.ssc-cr.org">http://www.ssc-cr.org</a></td>
+                    </tr>
+                    <tr>
+                        <td><b>Admit Card Download</b></td>
+                        <td><a href="https://ssc.gov.in">https://ssc.gov.in</a></td>
+                    </tr>
+                    <tr>
+                        <td><b>Answer Key</b></td>
+                        <td><a href="https://ssc.gov.in">https://ssc.gov.in</a></td>
+                    </tr>
+                </tbody>
+            </table>
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        </div>
+        <div th:replace="~{fragments::toolsFragment}">
+        </div>
+        <br>
+    </main>
+    <!-- End #main -->
+    <!-- Footer -->
+    <footer class="text-center" style="background: yellowgreen;">
+        <div th:replace="~{fragments :: footerFragment}"></div>
+    </footer>
+    <!-- Footer -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let navbar = document.getElementById("scroll-navbar");
+            let headings = document.querySelectorAll("h4.title");
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    -->
-  </body>
+            headings.forEach((heading, index) => {
+                let id = `heading-${index + 1}`;
+                heading.id = id; // Assign unique IDs if not present
+
+                let navItem = document.createElement("a");
+                navItem.href = `#${id}`;
+                navItem.innerText = heading.innerText;
+                navItem.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    document.getElementById(id).scrollIntoView({ behavior: "smooth", block: "start" });
+                });
+
+                navbar.appendChild(navItem);
+            });
+        });
+        $(document).ready(function () {
+            // Get postId from an input field or data attribute
+            var postId = $("#postId").text();
+
+            $.ajax({
+                url: "/count/view/" + postId,
+                type: "GET",
+                success: function (response) {
+                    document.getElementById("viewCount").innerText++;
+                    console.log("View count incremented:", response);
+                },
+                error: function (xhr, status, error) {
+                    console.error("Error:", error);
+                }
+            });
+
+            // method to like the post
+            $("#likeBtn").click(function (event) {
+                event.preventDefault();  // Prevent default link behavior
+
+                var url = $(this).attr("href");  // Get URL from href attribute
+
+                $.ajax({
+                    url: url,
+                    type: "GET",
+                    success: function (response) {
+                        $("#toastText").text("Liked!");
+                        document.getElementById("likeCount").innerText++;
+                        var toast = new bootstrap.Toast(document.getElementById('toastMessage'));
+                        toast.show();
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error:", error);
+                    }
+                });
+            });
+
+            // method to share the post count
+            $(".shareBtn").click(function (event) {
+                event.preventDefault();
+
+                // Get postId from an input field or data attribute
+                var postId = $("#postId").text();
+                var shareUrl = $(this).attr("href");
+
+                $.ajax({
+                    url: "/count/share/" + postId,
+                    type: "GET",
+                    success: function (response) {
+                        document.getElementById("shareCount").innerText++
+                        window.open(shareUrl, '_blank');
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error:", error);
+                        window.open(shareUrl, '_blank');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
 </html>
